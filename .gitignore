@@ -205,3 +205,6 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+est_prj/add_agents_shell.py
+est_prj/add_houses_shell.py
