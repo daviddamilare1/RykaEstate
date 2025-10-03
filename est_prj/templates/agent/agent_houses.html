@@ -1,0 +1,89 @@
+{% extends 'partials/base2.html' %} 
+{% load humanize %} 
+{% load static %} 
+{% block content %}
+                            
+                <!-- My Listings -->
+    <div id="dashboard">
+        <a href="#" class="utf_dashboard_nav_responsive"><i class="fa fa-reorder"></i> Dashboard Sidebar Menu</a>
+        {% include 'agent/sidebar.html' %}
+
+        <div class="utf_dashboard_content">
+            
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="utf_dashboard_list_box margin-top-0">
+                        <div class="sort-by my_sort_by">
+                            <div class="utf_sort_by_select_item">
+                                <select data-placeholder="Default Listing" class="utf_chosen_select_single">
+                                    <option>Default Listing</option>
+                                    <option>Active Listing</option>
+                                    <option>Pending Listing</option>
+                                    <option>Expired Listing</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h4><i class="bi bi-buildings"></i>Houses</h4>
+                        <ul>
+                            {% for h in houses %}
+                                <li>
+                                    <div class="utf_list_box_listing_item">
+                                        <div class="utf_list_box_listing_item-img" style="object-fit: cover; height: 250px; width: auto;">
+                                            <a href="{% url 'core:house_details' h.hid h.agent.agent_id %}"><img src="{{h.image.url}}" alt="" /></a>
+                                        </div>
+                                        <div class="utf_list_box_listing_item_content">
+                                            <div class="inner">
+                                                <a href="{% url 'core:house_details' h.hid h.agent.agent_id %}"><h3>{{h.name}}</h3></a>
+                                        
+                                                <!-- <span><i class="im im-icon-Hotel"></i> Hotels</span> -->
+                                                <span><i class="fa fa-map-marker"></i> {{h.address}}, {{h.city}}, {{h.state}}</span>
+                                                <span><i class="fa fa-bed"></i> {{h.bedrooms}}</span>
+                                                <span><i class="fa fa-bath"></i> {{h.bathrooms}}</span>
+                                                <span><i class="fa fa-car"></i> {{h.garage|default:'No Garage'}}</span>
+                                                <span><i class="fas fa-tree"></i> {{h.acres}}</span>
+                                                <span><i class="fas fa-ruler-combined"></i> {{h.sq_ft}}</span>
+                                                <span><i class="fas fa-calendar"></i> {{h.year_build}}</span>
+                                                
+                                                
+                                                
+                                                <p class="">{{h.desc|truncatechars:100}}</p>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="buttons-to-right">
+                                        <a href="{% url 'agent:edit_house' h.hid %}" class="button gray"><i class="fa fa-pencil"></i> Edit</a>
+                                        <a href="{% url 'agent:delete_house' h.hid %}" class="button gray"><i class="fa fa-trash" style="color: red;"></i> Delete</a>
+                                    </div>
+                                </li>
+                            {% endfor %}
+
+                            
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="utf_pagination_container_part margin-top-30 margin-bottom-30">
+                        <nav class="pagination">
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="fas fa-arrow-left"></i></a>
+                                </li>
+                                <li><a href="#" class="current-page">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li>
+                                    <a href="#"><i class="fas fa-arrow-right"></i></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="footer_copyright_part">Copyright © 2022 All Rights Reserved.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+{% endblock %}

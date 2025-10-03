@@ -1,0 +1,48 @@
+/* Custom SweetAlert2 Styles for Django Messages */
+.swal-error {
+    background-color: #fee2e2 !important; /* Red background for error */
+    border: 2px solid #ef4444 !important; /* Red border */
+}
+.swal-error .swal2-title {
+    color: #b91c1c !important; /* Darker red text */
+}
+.swal-error .swal2-icon-error {
+    color: #ef4444 !important; /* Red icon */
+    border-color: #ef4444 !important;
+}
+
+.swal-success {
+    background-color: #dcfce7 !important; /* Green background for success */
+    border: 2px solid #22c55e !important; /* Green border */
+}
+.swal-success .swal2-title {
+    color: #15803d !important; /* Darker green text */
+}
+.swal-success .swal2-icon-success {
+    color: #22c55e !important; /* Green icon */
+    border-color: #22c55e !important;
+}
+
+.swal-warning {
+    background-color: #fef9c3 !important; /* Yellow background for warning */
+    border: 2px solid #eab308 !important; /* Yellow border */
+}
+.swal-warning .swal2-title {
+    color: #a16207 !important; /* Darker yellow text */
+}
+.swal-warning .swal2-icon-warning {
+    color: #eab308 !important; /* Yellow icon */
+    border-color: #eab308 !important;
+}
+
+.swal-info, .swal-debug {
+    background-color: #e0f2fe !important; /* Light blue background for info/debug */
+    border: 2px solid #3b82f6 !important; /* Blue border */
+}
+.swal-info .swal2-title, .swal-debug .swal2-title {
+    color: #1e40af !important; /* Darker blue text */
+}
+.swal-info .swal2-icon-info, .swal-debug .swal2-icon-info {
+    color: #3b82f6 !important; /* Blue icon */
+    border-color: #3b82f6 !important;
+}

@@ -1,0 +1,35 @@
+
+
+<div class="utf_dashboard_navigation js-scrollbar">
+    <div class="utf_dashboard_navigation_inner_block">
+        <ul>
+            <li class="{% if request.path in '/agents/dashboard/' %} active {% endif %}"><a href="{% url 'agent:dashboard' %}"><i class="bi bi-grid"></i> Dashboard</a></li>
+
+            <li class="{% if request.path in '/agents/agent_apartments/' %} active {% endif %}  {% if request.path in '/agents/agent_houses/' %} active {% endif %}">
+			<a href="javascript:void(0)"><i class="bi bi-plus"></i> My Listings</a>
+			<ul>
+                <!-- <li><a href="{% url 'agent:create_apartment' %}"><i class="bi bi-plus"></i> House</a></li> -->
+				<li><a href="{% url 'agent:agent_apartments' %}"><i class="bi bi-building"></i> Apartments</a></li>
+                <li><a href="{% url 'agent:agent_houses' %}"><i class="bi bi-building"></i> Houses</a></li>
+				
+			</ul>
+            
+             <li class="{% if request.path in '/agents/create_apartment/' %} active {% endif %}  {% if request.path in '/agents/create_house/' %} active {% endif %}">
+			<a href="javascript:void(0)"><i class="bi bi-plus"></i> Add Property</a>
+			<ul>
+                <!-- <li><a href="{% url 'agent:create_apartment' %}"><i class="bi bi-plus"></i> House</a></li> -->
+				<li><a href="{% url 'agent:create_apartment' %}"><i class="bi bi-building"></i> Apartment</a></li>
+                <li><a href="{% url 'agent:create_house' %}"><i class="bi bi-building"></i> House</a></li>
+				
+			</ul>		
+            <li class="{% if request.path in '/agents/bookings/' %} active {% endif %}"><a href="{% url 'agent:bookings' %}"><i class="bi bi-check"></i>All Bookings</a></li>
+            <li class="{% if request.path in '/agents/notifications/' %} active {% endif %}"><a href="{% url 'agent:notifications' %}"><i class="bi bi-bell-fill"></i> Notifications</a></li>
+            <li class=""><a href=""><i class="bi bi-wallet-fill"></i> Wallet</a></li>
+            <li class=""><a href=""><i class="bi bi-heart-fill"></i> Bookmark</a></li>
+            <li class=""><a href="{% url 'agent:edit_agent_details' %}"><i class="bi bi-person-fill"></i> My Profile</a></li>
+            <li class=""><a href=""><i class="bi bi-lock-fill"></i> Change Password</a></li>
+            <li><a href="{% url 'userauths:sign_out' %}"><i class="bi bi-arrow-left"></i> Logout</a></li>
+
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,222 @@
+{% extends "partials/base.html" %}
+{% load humanize %}
+{% load static %}
+{% block content  %}
+
+    <main class="main">
+        <!-- Page Title -->
+        <div class="page-title">
+            <div class="heading">
+                <div class="container">
+                    <div class="row d-flex justify-content-center text-center">
+                        <div class="col-lg-8">
+                            <h1 class="heading-title">Apartments</h1>
+                            <p class="mb-0">
+                                Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum
+                                dolorem.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- End Page Title -->
+
+        <!-- Properties Section -->
+        <section id="properties" class="properties section">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="properties-header mb-4">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                                <div class="view-toggle d-flex gap-2">
+                                    
+                                </div>
+                                <div class="sort-dropdown">
+                                    <select class="form-select form-select-sm">
+                                        <option>Sort by: Newest</option>
+                                        <option>Price: Low to High</option>
+                                        <option>Price: High to Low</option>
+                                        <option>Most Viewed</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="properties-grid view-grid active" data-aos="fade-up" data-aos-delay="200">
+                            <div class="row g-4">
+                                {% for a in apartments %}
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="property-card">
+                                            <div class="property-image">
+                                                <img src="{{a.image.url}}" alt="Modern Family Home" class="img-fluid" />
+                                                <div class="property-badges">
+                                                    {% if a.featured == True %}
+                                                        <span class="badge featured">Featured</span>
+                                                    {%endif %}
+                                                    
+                                                </div>
+                                                <div class="property-overlay">
+                                                    <button class="favorite-btn"><i class="bi bi-heart"></i></button>
+                                                    <!-- <button class="gallery-btn" data-count="12"><i class="bi bi-images"></i></button> -->
+                                                </div>
+                                            </div>
+                                            <div class="property-content">
+                                                <div class="property-price">${{a.price|floatformat:0|intcomma}}/day</div>
+                                                <h4 class="property-title">{{a.name}}</h4>
+                                                <p class="property-location"><i class="bi bi-geo-alt"></i> {{a.address}}</p>
+                                                <div class="property-features">
+                                                    <span><i class="bi bi-house"></i> {{a.bedrooms}} Bed</span>
+                                                    <span><i class="bi bi-water"></i> {{a.bathrooms}} Bath</span>                                            
+                                                    <span><i class="bi bi-car-front"></i> {{a.garage|default:0}} garage</span>                                                
+                                                    <!-- <span><i class="bi bi-arrows-angle-expand"></i>{{a.sq_ft}} sqft</span> -->
+                                                </div>
+                                                <div class="property-agent">
+                                                    <img src="{{a.agent.image.url}}" alt="Agent" class="agent-avatar" />
+                                                    <div class="agent-info">
+                                                        <strong>{{a.agent.full_name}}</strong>
+                                                        <div class="agent-contact">
+                                                            <small><i class="bi bi-telephone"></i> {{a.agent.phone}}</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a href="{% url 'core:apt_details' a.apt_id a.agent.agent_id %}" class="btn btn-primary w-100">View Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                                <!-- End Property Item -->
+
+                                
+                            </div>
+                        </div>
+
+                        
+
+                        <nav class="mt-5" data-aos="fade-up" data-aos-delay="300">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="properties-sidebar">
+                            <div class="filter-widget">
+                                <h5 class="filter-title">Filter Properties</h5>
+
+                                <div class="filter-section">
+                                    <label class="form-label">Property Type</label>
+                                    <select class="form-select">
+                                        <option>All Types</option>
+                                        <option>House</option>
+                                        <option>Apartment</option>
+                                        <option>Condo</option>
+                                        <option>Townhouse</option>
+                                        <option>Commercial</option>
+                                    </select>
+                                </div>
+
+                                <div class="filter-section">
+                                    <label class="form-label">Price Range</label>
+                                    <div class="row g-2">
+                                        <div class="col-6">
+                                            <input type="number" class="form-control" placeholder="Min Price" />
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="number" class="form-control" placeholder="Max Price" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="filter-section">
+                                    <label class="form-label">Bedrooms</label>
+                                    <div class="bedroom-filter">
+                                        <button class="btn btn-outline-secondary btn-sm filter-btn active">Any</button>
+                                        <button class="btn btn-outline-secondary btn-sm filter-btn">1+</button>
+                                        <button class="btn btn-outline-secondary btn-sm filter-btn">2+</button>
+                                        <button class="btn btn-outline-secondary btn-sm filter-btn">3+</button>
+                                        <button class="btn btn-outline-secondary btn-sm filter-btn">4+</button>
+                                    </div>
+                                </div>
+
+                                <div class="filter-section">
+                                    <label class="form-label">Bathrooms</label>
+                                    <div class="bathroom-filter">
+                                        <button class="btn btn-outline-secondary btn-sm filter-btn active">Any</button>
+                                        <button class="btn btn-outline-secondary btn-sm filter-btn">1+</button>
+                                        <button class="btn btn-outline-secondary btn-sm filter-btn">2+</button>
+                                        <button class="btn btn-outline-secondary btn-sm filter-btn">3+</button>
+                                    </div>
+                                </div>
+
+                                <div class="filter-section">
+                                    <label class="form-label">Location</label>
+                                    <input type="text" class="form-control" placeholder="Enter city or neighborhood" />
+                                </div>
+
+                                <div class="filter-section">
+                                    <label class="form-label">Features</label>
+                                    <div class="features-filter">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="garage" />
+                                            <label class="form-check-label" for="garage">Garage</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="pool" />
+                                            <label class="form-check-label" for="pool">Swimming Pool</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="balcony" />
+                                            <label class="form-check-label" for="balcony">Balcony</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="garden" />
+                                            <label class="form-check-label" for="garden">Garden</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary w-100">Apply Filters</button>
+                            </div>
+
+                            <div class="featured-properties mt-4">
+                                <h5>Featured Properties</h5>
+                                {% for a in featured_apartments %}
+                                    <div class="featured-item">
+                                        <div class="row g-3 align-items-center">
+                                            <div class="col-5">
+                                                <a href="{% url 'core:apt_details' a.apt_id a.agent.agent_id %}"><img src="{{a.image.url}}" alt="Property" class="img-fluid rounded" style="max-width: 80px; object-fit: cover; width: 100px;" /></a>
+                                            </div>
+                                            <div class="col-7">
+                                                <h6 class="mb-1">{{a.name}}</h6>
+                                                <p class="text-muted small mb-1">{{a.state}}, {{a.city}}</p>
+                                                <strong class="text-primary">${{a.price|floatformat:0|intcomma}}</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Properties Section -->
+    </main>
+
+{% endblock %}
+
+
+  

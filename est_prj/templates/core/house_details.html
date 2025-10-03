@@ -1,0 +1,280 @@
+{% extends "partials/base.html" %}
+{% load humanize %}
+{% load static %}
+{% block content  %}
+
+    <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title">
+        <div class="heading">
+        <div class="container">
+            <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+                <h1 class="heading-title">{{house.name}}</h1>
+                <p class="mb-0">
+                Listed by <strong>{{house.agent.full_name}}</strong>
+                </p>
+            </div>
+            </div>
+        </div>
+        </div>
+        <nav class="breadcrumbs">
+        <div class="container">
+            <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Property Details</li>
+            </ol>
+        </div>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <!-- Property Details Section -->
+    <section id="property-details" class="property-details section">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+            <div class="col-lg-8">
+
+            <!-- Property Gallery -->
+            <div class="property-gallery" data-aos="fade-up" data-aos-delay="200">
+                <div class="main-image-container image-zoom-container">
+                    <img id="main-house-image" src="{{house.image.url}}" alt="Property Image" class="img-fluid main-property-image">
+                </div>
+                <div class="thumbnail-gallery thumbnail-list">
+                    <div class="thumbnail-item" data-image="{{ house.image.url }}">
+                        <img src="{{ house.image.url }}" alt="Property Image" class="img-fluid">
+                    </div>
+                    {% for g in house.house_gallery.all %}
+                        <div class="thumbnail-item" data-image="{{g.image.url}}">
+                            <img src="{{g.image.url}}" alt="Property Image" class="img-fluid">
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <script>
+                document.querySelectorAll('.thumbnail-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        const imageUrl = item.getAttribute('data-image');
+                        document.getElementById('main-house-image').src = imageUrl;
+                    });
+                });
+            </script>
+            <!-- End Property Gallery -->
+
+            <!-- Property Description -->
+            <div class="property-description" data-aos="fade-up" data-aos-delay="300">
+                <h3>About This Property</h3>
+                <p>{{house.desc}}</p>
+                
+            </div><!-- End Property Description -->
+
+            <!-- Amenities -->
+            <div class="property-amenities" data-aos="fade-up" data-aos-delay="400">
+                <h3>Amenities &amp; Features</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Interior Features</h4>
+                        <ul class="features-list">
+                            {% for i in house.interior_features.all %}
+                                <li><i class="bi bi-check-circle"></i>{{i.name}}</li>
+                            {% endfor %}                            
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Exterior Features</h4>
+                        <ul class="features-list">
+                            {% for e in house.exterior_features.all %}
+                                <li><i class="bi bi-check-circle"></i>{{e.name}}</li>
+                            {% endfor %}
+                        
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- End Amenities -->
+
+            <!-- Map Section -->
+            <div class="property-map" data-aos="fade-up" data-aos-delay="500">
+                <div class="location-details">
+                    <h4>Neighborhood Information</h4>
+                    <p>{{house.neigbourhood_info}}</p>
+                </div>
+            </div><!-- End Map Section -->
+
+            </div>
+
+            <div class="col-lg-4">
+
+            <!-- Property Overview -->
+            <div class="property-overview sticky-top" data-aos="fade-up" data-aos-delay="200">
+                <div class="price-tag">${{house.price|floatformat:0|intcomma}}</div>
+                <div class="property-status">For Sale</div>
+
+                <div class="property-address">
+                <h4>{{house.state}}, {{house.city}}</h4>
+                <p>{{house.address}}</p>
+                </div>
+
+                <div class="property-stats">
+                <div class="stat-item">
+                    <i class="fas fa-bed bed-icon"></i>
+                    <div>
+                    <span class="value">{{house.bedrooms}}</span>
+                    <span class="label">Bedrooms</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-bath"></i>
+                    <div>
+                    <span class="value">{{house.bathrooms}}</span>
+                    <span class="label">Bathrooms</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-ruler-combined"></i> 
+                    <div>
+                    <span class="value">{{house.sq_ft|floatformat:0|intcomma}}</span>
+                    <span class="label">Sq Ft</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-tree"></i>
+                    <div>
+                    <span class="value">{{house.acres|floatformat:2|intcomma}}</span>
+                    <span class="label">Acre Lot</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-calendar"></i>
+                    <div>
+                    <span class="value">{{house.year_build}}</span>
+                    <span class="label">Year Built</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-car"></i>
+                    <div>
+                    <span class="value">{{house.garage}}</span>
+                    <span class="label">Garage</span>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Agent Info -->
+                <div class="agent-info">
+                    <div class="agent-avatar">
+                        <a href="{% url 'agent:agent_details' agent.agent_id %}"><img src="{{house.agent.image.url}}" alt="Sarah Johnson" class="img-fluid"></a>
+                    </div>
+                    <div class="agent-details">
+                        <a href="{% url 'agent:agent_details' agent.agent_id %}"><h4>{{house.agent.full_name}}</h4></a>
+                        <div style="margin-top: -5px;">
+                            {% for i in "12345" %}
+                                <i class="fas fa-star {% if agent_rating >= forloop.counter %}text-warning{% endif %}" style="font-size: 10px;"></i>
+                            {% endfor %}
+                        </div>
+                        <p class="agent-title">Licensed {{house.agent.agent_type}}</p>
+                        
+                        <p class="agent-phone"><i class="bi bi-telephone"></i>{{house.agent.phone}}</p>
+                        <p class="agent-email"><i class="bi bi-envelope"></i>{{house.agent.email}}</p>
+                    </div>
+                </div>
+                <!-- End Agent Info -->
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h4>Schedule a Tour or Make Inquiry</h4>
+                    <p class="text-danger">Please fill the form appropiately</p>
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            {% for error in form.non_field_errors %}
+                                <strong>{{ error }}</strong><br>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    
+                    <form action="" class="" method="POST"> {% csrf_token %}
+                        <div class="row">
+                            <div class="col-12 form-group">
+                                {{form.full_name}}
+                                {% if form.full_name.errors %}
+                                    <div class="text-danger">
+                                        {% for error in form.full_name.errors %}
+                                            <small>{{ error }}</small><br>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="col-12 form-group">
+                                {{form.email}}
+                                {% if form.email.errors %}
+                                    <div class="text-danger">
+                                        {% for error in form.email.errors %}
+                                            <small>{{ error }}</small><br>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                                
+                            </div>
+                            <div class="col-12 form-group">
+                                {{form.phone}}
+                                {% if form.phone.errors %}
+                                    <div class="text-danger">
+                                        {% for error in form.phone.errors %}
+                                            <small>{{ error }}</small><br>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            
+
+                            <div class="col-12 form-group">
+                                {{form.message}}
+                                {% if form.message.errors %}
+                                    <div class="text-danger">
+                                        {% for error in form.message.errors %}
+                                            <small>{{ error }}</small><br>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-primary">Schedule Tour</button>
+                            </div>
+                        </div>
+                    </form>
+                
+                </div>
+            <!-- End Contact Form -->
+
+                <!-- Social Share -->
+                <!-- <div class="social-share">
+                    <h5>Share This Property</h5>
+                    <div class="share-buttons">
+                        <a href="#" class="share-btn facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="share-btn twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="share-btn whatsapp"><i class="bi bi-whatsapp"></i></a>
+                        <a href="#" class="share-btn email"><i class="bi bi-envelope"></i></a>
+                        <a href="#" class="share-btn print"><i class="bi bi-printer"></i></a>
+                    </div>
+                </div> -->
+                <!-- End Social Share -->
+
+            </div><!-- End Property Overview -->
+
+            </div>
+
+        </div>
+
+        </div>
+
+    </section><!-- /Property Details Section -->
+
+    </main>
+
+{% endblock %}
+

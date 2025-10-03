@@ -1,0 +1,67 @@
+{% extends "partials/base.html" %} {% load static %} {% block content %}
+
+
+
+
+<!-- Contact 2 Section -->
+<section id="auth-form" class="auth-form section" style="margin-top: 8rem;">
+    <!-- Contact Form Section (Overlapping) -->
+    <div class="container">
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-10">
+                <div class="contact-form-wrapper">
+                    <h2 class="text-center mb-4">Sign In</h2>
+                    {% if form.non_field_errors %}
+                        <div class="text-danger mb-3">
+                            {% for error in form.non_field_errors %}
+                                <small>{{ error }}</small><br>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    <form action="" method="POST"> {% csrf_token %}
+                        <div class="row g-3">
+                            
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <div class="input-with-icon">
+                                        <i class="bi bi-envelope"></i>
+                                        {{form.email}}
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <div class="input-with-icon">
+                                        <i class="bi bi-person"></i>
+                                        {{form.password}}
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <div class="input-with-icon">
+                                        {{form.captcha}}
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-submit">Sign In</button>
+                            </div>
+                            <a href="{% url 'userauths:sign_up' %}" style="color: #163535;">Don't have an account yet? <span style="color: #48898A;">Sign Up</span></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Contact 2 Section -->
+
+{% endblock %}

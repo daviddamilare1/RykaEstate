@@ -1,0 +1,171 @@
+
+{% extends 'partials/base2.html' %}
+{% load humanize %}
+{% load static %}
+{% block content %}
+
+    <!-- Dashboard -->
+    <div id="dashboard">
+        <a href="#" class="utf_dashboard_nav_responsive"><i class="fa fa-reorder"></i> Dashboard Sidebar Menu</a>
+        {% include 'agent/sidebar.html' %}
+        <div class="utf_dashboard_content">
+            
+            <div class="row">
+
+                    <!-- House Stats -->
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="utf_dashboard_stat" style="background-color: #228B22;">
+                        <div class="utf_dashboard_stat_content">
+                            <h4>{{total_houses|default:0}}</h4>
+                            <span>Number of Houses</span>
+                        </div>
+                        <div class="utf_dashboard_stat_icon"><i class="fas fa-house"></i></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="utf_dashboard_stat" style="background-color: #32CD32;">
+                        <div class="utf_dashboard_stat_content">
+                            <h4>{{houses_sold|default:0}}</h4>
+                            <span>Houses Sold</span>
+                        </div>
+                        <div class="utf_dashboard_stat_icon"><i class="fas fa-house-circle-check"></i></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="utf_dashboard_stat" style="background-color: #FFC107;">
+                        <div class="utf_dashboard_stat_content">
+                            <h4>${{total_house_revenue|floatformat:0|default:0.00|intcomma}}</h4>
+                            <span>Houses Revenue</span>
+                        </div>
+                        <div class="utf_dashboard_stat_icon"><i class="fas fa-sack-dollar"></i></div>
+                    </div>
+                </div>
+                <!-- END -->
+
+                    <!-- APARTMENTs STATS -->
+                {% if apartment_exists %}
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="utf_dashboard_stat">
+                            <div class="utf_dashboard_stat_content">
+                                <h4>{{apartments.count|default:0}}</h4>
+                                <span>Number of Apartments</span>
+                            </div>
+                            <div class="utf_dashboard_stat_icon"><i class="fas fa-city"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="utf_dashboard_stat" style="background-color: #F4C2C2;">
+                            <div class="utf_dashboard_stat_content">
+                                <h4>{{bookings.count|default:0}}</h4>
+                                <span>Total Paid Bookings</span>
+                            </div>
+                            <div class="utf_dashboard_stat_icon"><i class="fas fa-calendar-check"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="utf_dashboard_stat" style="background-color: #001F3F;">
+                            <div class="utf_dashboard_stat_content">
+                                <h4>{{active_bookings.count|default:0}}</h4>
+                                <span>Active Bookings</span>
+                            </div>
+                            <div class="utf_dashboard_stat_icon"><i class="fas fa-calendar"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="utf_dashboard_stat" style="background-color: #50C878;">
+                            <div class="utf_dashboard_stat_content">
+                                <h4>{{vacant_apartments|default:0}}</h4>
+                                <span>Available Apartments</span>
+                            </div>
+                            <div class="utf_dashboard_stat_icon"><i class="fas fa-building"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="utf_dashboard_stat" style="background-color: #E07A5F;">
+                            <div class="utf_dashboard_stat_content">
+                                <h4>{{occupied_apartments|default:0}}</h4>
+                                <span>Occupied Apartments</span>
+                            </div>
+                            <div class="utf_dashboard_stat_icon"><i class="fas fa-building-user"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="utf_dashboard_stat" style="background-color: #FFC107;">
+                            <div class="utf_dashboard_stat_content">
+                                <h4>${{booked_earnings|floatformat:0|default:0.00|intcomma}}</h4>
+                                <span>Apartments Revenue</span>
+                            </div>
+                            <div class="utf_dashboard_stat_icon"><i class="fas fa-sack-dollar"></i></div>
+                        </div>
+                    </div>
+
+                {% endif %}
+                    <!-- END -->
+
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 mb-4">
+                    <!-- recent_booking -->
+                    <div class="utf_dashboard_list_box table-responsive">
+                        <h4>Booking</h4>
+                        <div class="dashboard-list-box table-responsive invoices with-icons">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Booking ID</th>
+                                        <th>Apartment Name</th>
+                                        <th>Customer Name</th>
+                                        <th>Booking Date</th>
+                                        <th>Payment Status</th>
+                                        <th>View Booking</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    {% for b in bookings %}
+                                        <tr>
+                                            <td>{{b.booking_id}}</td>
+                                            <td>{{b.apartment.name}}</td>
+                                            <td>{{b.full_name}}</td>
+                                            <td>{{b.date}}</td>
+                                            <td><span class="badge text-uppercase">{{b.payment_status}}</span></td>
+                                            <td><a href="" class="button gray"><i class="fa fa-eye"></i> View</a></td>
+                                        </tr>
+                                    {% endfor %}
+                                    
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12">
+                    <div class="utf_dashboard_list_box invoices with-icons margin-top-20">
+                        <h4>All Booking Invoices</h4>
+                        <ul>
+                            
+                            {% for b in bookings %}
+                                <li><i class="fas fa-receipt"></i> <strong>{{b.apartment.name}} <span class="paid">{{b.payment_status}}</span></strong>
+                                    <ul>
+                                        <li><span>Booking ID:-</span> {{b.booking_id}}</li>
+                                        <li><span>Date:-</span>{{b.date}}</li>
+                                    </ul>
+                                    <div class="buttons-to-right"> <a href="" class="button gray"><i class="fas fa-arrow-right"></i> Invoice</a> </div>
+                                </li>
+                            {% endfor %}
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
