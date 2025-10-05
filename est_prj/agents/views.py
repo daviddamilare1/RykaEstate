@@ -77,9 +77,9 @@ def agent_details(request, agent_id):
         if request.user.is_authenticated:
         
             if form.is_valid():
-                form.save()
-
-
+                tour = form.save()
+                tour.agent = agent
+                tour.save()
                 
                 
                 noti = Notification.objects.create(
@@ -91,6 +91,9 @@ def agent_details(request, agent_id):
                     
                 messages.success(request, 'Your request has been submitted. The agent will contact you soon')
                 return redirect('agent:agent_details', agent_id=agent_id)
+            else:
+                messages.error(request, 'An error occurred')
+
         
         else:
             # house = House.objects.get(hid=hid, status='live')
@@ -732,11 +735,11 @@ def edit_agent_details(request):
         # EDIT AGENT DETAILS
 @login_required(login_url='userauths:sign_in')
 def agent_messages(request):
-    messages = ScheduleTour.objects.all()
+    messages = ScheduleTour.objects.all().order_by('-id')
 
 
     context = {
-        'messages': messages,
+        'inbox': messages,
         
     }
 

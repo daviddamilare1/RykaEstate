@@ -30,12 +30,18 @@ class ScheduleTourForm(forms.ModelForm):
     phone = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control rounded', 'placeholder':'Enter Phone Number'}), required=True)
     email = forms.EmailField(widget=forms.TextInput(attrs={'class':'form-control rounded', 'placeholder':'Enter Email'}), required=True)
     message = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control rounded', 'placeholder':'Write a brief message for the agent'}), required=True)
-
+   
 
 
     class Meta:
         model = ScheduleTour
-        fields = ['full_name', 'email', 'phone', 'message']
+        fields = ['full_name', 'email', 'phone', 'message', 'type']
+
+        widgets = {
+            'type': forms.Select(attrs={'class': 'form-control rounded', 'placeholder': 'Choose Request'})
+        }
+
+
 
     def clean_email(self):
         email = self.cleaned_data.get('email')

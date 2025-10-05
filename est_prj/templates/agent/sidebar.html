@@ -24,7 +24,7 @@
 			</ul>		
             <li class="{% if request.path in '/agents/bookings/' %} active {% endif %}"><a href="{% url 'agent:bookings' %}"><i class="bi bi-check"></i>All Bookings</a></li>
             <li class="{% if request.path in '/agents/notifications/' %} active {% endif %}"><a href="{% url 'agent:notifications' %}"><i class="bi bi-bell-fill"></i> Notifications</a></li>
-            <li class="{% if request.path in '/agents/agent_messages/' %} active {% endif %}"><a href="{% url 'agent:agent_messages' %}"><i class="bi bi-wallet-fill"></i> Messages</a></li>
+            <li class="{% if request.path in '/agents/agent_messages/' %} active {% endif %}"><a href="{% url 'agent:agent_messages' %}"><i class="bi bi-envelope-fill"></i> Messages</a></li>
             <li class=""><a href=""><i class="bi bi-heart-fill"></i> Bookmark</a></li>
             <li class=""><a href="{% url 'agent:edit_agent_details' %}"><i class="bi bi-person-fill"></i> My Profile</a></li>
             <li class=""><a href=""><i class="bi bi-lock-fill"></i> Change Password</a></li>

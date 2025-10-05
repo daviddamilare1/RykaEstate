@@ -230,6 +230,17 @@
                                 {% endif %}
                             </div>
 
+                            <div class="col-12 form-group">
+                                {{form.type}}
+                                {% if form.type.errors %}
+                                    <div class="text-danger">
+                                        {% for error in form.type.errors %}
+                                            <small>{{ error }}</small><br>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+
                             
 
                             <div class="col-12 form-group">

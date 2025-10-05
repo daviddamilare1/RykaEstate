@@ -130,7 +130,10 @@ def house_details(request, hid, agent_id):
         if request.user.is_authenticated:
         
             if form.is_valid():
-                form.save()
+                tour = form.save(commit=False)
+                tour.house = house
+                tour.save()
+
 
 
                 

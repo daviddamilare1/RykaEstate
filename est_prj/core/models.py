@@ -130,6 +130,12 @@ PAYMENT_METHOD = (
 
 
 
+MESSAGE_TYPE = (
+    ('Request a Tour', 'Request a Tour'),
+    ('Make an Inquiry', 'Make an Inquiry'),
+    
+)
+
 
 
 
@@ -581,7 +587,8 @@ class ScheduleTour(models.Model):
     full_name = models.CharField(max_length=60)
     email = models.EmailField(max_length=100)
     phone = models.CharField(max_length=15)
-    message = models.CharField(max_length=60)
+    type = models.CharField(max_length=100, choices=MESSAGE_TYPE, default=None, null=True, blank=True)
+    message = models.TextField(max_length=100)
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

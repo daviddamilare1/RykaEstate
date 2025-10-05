@@ -23,33 +23,40 @@
                         <h4 class="noti-text">Messages</h4>
 
                         <ul class="">
-                            {% for m in Messages %}
+                            {% for i in inbox %}
                                 <li class="">
+                                    {% if i.agent %}
+                                        <p style="font-size: 22px;"><strong>{{i.full_name|title}}</strong> dropped a message for you</p>
+                                    {% else %}
+                                        <p style="font-size: 22px;"><strong>{{i.full_name|title}}</strong> wants to {{i.type}} for <strong>{{i.house.name}}</strong>.</p>
+                                    {% endif %}
+                                    
                                     <div class="utf_inner_booking_listing_list">
-                                        <h5>Client Name:</h5>
+                                        <h5>Email:</h5>
                                         <ul class="utf_booking_listing_list">
-                                            <li>{{m.full_name}}</li>
+                                            <li>{{i.email}}</li>
                                         </ul>
                                     </div> 
                                     <div class="utf_inner_booking_listing_list">
-                                        <h5>Client Email:</h5>
+                                        <h5>Phone:</h5>
                                         <ul class="utf_booking_listing_list">
-                                            <li>{{m.email}}</li>
-                                        </ul>
-                                    </div> 
-                                    <div class="utf_inner_booking_listing_list">
-                                        <h5>Client Phone:</h5>
-                                        <ul class="utf_booking_listing_list">
-                                            <li>{{m.phone}}</li>
+                                            <li>{{i.phone}}</li>
                                         </ul>
                                     </div>  
-
-                                    <p><strong>Message:</strong> {{m.message}}</p>                              
+                                    <p><strong>Message:</strong> {{i.message}}</p>
+                                    
+                                    <div class="">
+                                      
+                                        <ul>
+                                            <li><strong>Date:</strong> {{i.date}}</li>
+                                        </ul>
+                                    </div>
     
                                 </li>
+                                
                             {% empty %}
                                 <li>
-                                    <h6>No Notifications Yet</h6>
+                                    <h6>No Messages Yet</h6>
                                 </li>
                             {% endfor %}
                         </ul>
