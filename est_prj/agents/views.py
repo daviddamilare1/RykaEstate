@@ -727,6 +727,24 @@ def edit_agent_details(request):
 
     return render(request, 'agent/edit_agent_details.html', context)
 
+#####################################################################################
+
+        # EDIT AGENT DETAILS
+@login_required(login_url='userauths:sign_in')
+def agent_messages(request):
+    messages = ScheduleTour.objects.all()
+
+
+    context = {
+        'messages': messages,
+        
+    }
+
+
+    return render(request, 'agent/agent_messages.html', context)
+
+    
+
 
 
 

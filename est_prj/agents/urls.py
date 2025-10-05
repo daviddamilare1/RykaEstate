@@ -58,5 +58,8 @@ urlpatterns = [
 
         # EDIT AGENT DETAILS
     path('edit_agent_details', edit_agent_details, name='edit_agent_details'),
+
+            # AGENT MESSAGES
+    path('agent_messages', agent_messages, name='agent_messages'),
     
     ]

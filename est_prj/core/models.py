@@ -576,6 +576,8 @@ class Review(models.Model):
 
 class ScheduleTour(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True, default=1)
+    agent = models.ForeignKey(Agent, on_delete=models.SET_NULL, null=True, blank=True)
+    house = models.ForeignKey(House, on_delete=models.SET_NULL, null=True, blank=True)
     full_name = models.CharField(max_length=60)
     email = models.EmailField(max_length=100)
     phone = models.CharField(max_length=15)

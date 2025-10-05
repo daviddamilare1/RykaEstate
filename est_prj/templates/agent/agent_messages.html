@@ -1,0 +1,62 @@
+{% extends 'partials/base2.html' %} 
+{% load humanize %}
+{% load static %} 
+{% block content %}
+
+        <!-- Dashboard -->
+    <div id="dashboard">
+        <a href="#" class="utf_dashboard_nav_responsive"><i class="fa fa-reorder"></i> Dashboard Sidebar Menu</a>
+        {% include 'agent/sidebar.html' %}
+        <div class="utf_dashboard_content">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="utf_dashboard_list_box with-icons margin-top-20 noti-div-main">
+                        <div class="sort-by my_sort_by">
+                            <div class="utf_sort_by_select_item">
+                                <select id="noti-status" data-placeholder="All Listing" class="utf_chosen_select_single">
+                                    <option value="all">All Messages</option>
+                                    <option value="read">Read Messages</option>
+                                    <option value="unread">Unread Messages</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h4 class="noti-text">Messages</h4>
+
+                        <ul class="">
+                            {% for m in Messages %}
+                                <li class="">
+                                    <div class="utf_inner_booking_listing_list">
+                                        <h5>Client Name:</h5>
+                                        <ul class="utf_booking_listing_list">
+                                            <li>{{m.full_name}}</li>
+                                        </ul>
+                                    </div> 
+                                    <div class="utf_inner_booking_listing_list">
+                                        <h5>Client Email:</h5>
+                                        <ul class="utf_booking_listing_list">
+                                            <li>{{m.email}}</li>
+                                        </ul>
+                                    </div> 
+                                    <div class="utf_inner_booking_listing_list">
+                                        <h5>Client Phone:</h5>
+                                        <ul class="utf_booking_listing_list">
+                                            <li>{{m.phone}}</li>
+                                        </ul>
+                                    </div>  
+
+                                    <p><strong>Message:</strong> {{m.message}}</p>                              
+    
+                                </li>
+                            {% empty %}
+                                <li>
+                                    <h6>No Notifications Yet</h6>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
