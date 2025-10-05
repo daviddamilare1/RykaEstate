@@ -3,6 +3,9 @@ from django.forms import modelformset_factory
 from django.http import JsonResponse, HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 
+from django.contrib.auth.hashers import check_password
+from django.contrib.auth import update_session_auth_hash
+
 from agents.models import *
 from core.models import *
 # from django.db.models import Avg
@@ -746,7 +749,43 @@ def agent_messages(request):
 
     return render(request, 'agent/agent_messages.html', context)
 
-    
+############################################################################
+
+        # CHANGE PASSWORD
+@login_required(login_url='userauths:sign_in')
+def change_password(request):
+    user = request.user
+
+    if request.method == 'POST':
+        old_password = request.POST.get('old_password')
+        new_password = request.POST.get('new_password')
+        confirm_new_password = request.POST.get('confirm_new_password')
+
+
+        if not all([old_password, new_password, confirm_new_password]):
+            messages.warning(request, 'All fields are required')
+
+
+        if confirm_new_password != new_password:
+            messages.error(request, 'Confirm New Password and New Password must be the same')
+        
+        if check_password(old_password, user.password):
+            try:
+                user.set_password(new_password)
+                user.save()
+                update_session_auth_hash(request, user)
+                messages.success(request, 'Password updated successfully.')
+                return redirect('agent:dashboard')
+            except Exception as e:
+                messages.error(request, f'Error Updating Password: {str(e)}')
+                return redirect('agent:change_password')
+        else:
+            messages.error(request, 'Current Password is incorrect.')
+
+
+
+
+    return render(request, 'agent/change_password.html')
 
 
 

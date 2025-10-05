@@ -61,5 +61,10 @@ urlpatterns = [
 
             # AGENT MESSAGES
     path('agent_messages', agent_messages, name='agent_messages'),
+
+           # CHANGE PASSWORD
+    path('change_password', change_password, name='change_password'),
     
-    ]
+
+
+]
