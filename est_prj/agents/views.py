@@ -50,6 +50,7 @@ def agents(request):
 
         # AGENT DETAILS 
 def agent_details(request, agent_id):
+
     if request.user.is_authenticated:
         agent = Agent.objects.get(agent_id=agent_id, verified=True)
         agent_rating = AgentReview.objects.filter(agent=agent).aggregate(avg_rating=models.Avg('rating'))['avg_rating']
@@ -104,10 +105,11 @@ def agent_details(request, agent_id):
 
             messages.error(request, 'You need to be logged in to message agent')
             return redirect('userauths:sign_in')
-       
+        
+    
 
-
-   
+    apartments = Apartment.objects.filter(agent=agent, status='live')
+    houses = House.objects.filter(agent=agent, status='live')
 
 
 
@@ -118,6 +120,8 @@ def agent_details(request, agent_id):
         'reviews':reviews,
         'review_exist': review_exist,
         'agent_rating':agent_rating,
+        'apartments': apartments,
+        'houses': houses,
 
     }
 
@@ -126,6 +130,24 @@ def agent_details(request, agent_id):
 
 
 
+
+def agent_listings(request, agent_id):
+    
+    agent = Agent.objects.get(agent_id=agent_id, verified=True)
+    apartments = Apartment.objects.filter(agent=agent, status='live')
+    houses = House.objects.filter(agent=agent, status='live')
+
+
+
+    context = {
+        'agent':agent,
+        'apartments': apartments,
+        'houses': houses,
+        
+
+    }
+
+    return render(request, 'agent/agent_listings.html', context)
 
 
         # ADD COMMENT

@@ -8,8 +8,14 @@ app_name = 'agent'
 urlpatterns = [
         # AGENTS LIST
     path('agents', agents, name='agents'),
+
         # AGENT DETAILS 
     path('agent_details/<agent_id>/', agent_details, name='agent_details'),
+
+        # AGENT LISTINGS 
+    path('agent_listings/<agent_id>/', agent_listings, name='agent_listings'),
+
+
 
         # ADD COMMENT
     path('add_comment/<agent_id>/', add_comment, name='add_comment'),

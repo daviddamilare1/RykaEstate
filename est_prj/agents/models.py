@@ -134,8 +134,7 @@ class Agent(models.Model):
     facebook = models.URLField(max_length=200, null=True, blank=True)
     whatsapp = models.URLField(max_length=200, null=True, blank=True)
     
-
-   
+    
     identity_type = models.CharField(max_length=100,choices=IDENTITY_TYPE)
     identity_image = models.FileField(upload_to=user_directory_path, default='id.jpg')
     verified = models.BooleanField(default=False)

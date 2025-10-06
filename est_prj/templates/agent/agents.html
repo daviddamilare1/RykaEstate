@@ -48,7 +48,7 @@
                             <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
                                 <div class="agent-card">
                                     <div class="agent-photo">
-                                        <img src="{{a.image.url}}" alt="Agent" class="img-fluid" />
+                                        <a href="{% url 'agent:agent_details' a.agent_id %}"><img src="{{a.image.url}}" alt="Agent" class="img-fluid" /></a>
                                         <div class="hover-overlay">
                                             <div class="contact-actions">
                                                 <a href="#" class="action-btn" title="Call"><i class="bi bi-telephone"></i></a>
@@ -58,7 +58,7 @@
                                         </div>
                                     </div>
                                     <div class="agent-info">
-                                        <h5>{{a.full_name}}</h5>
+                                        <a href="{% url 'agent:agent_details' a.agent_id %}"><h5>{{a.full_name}}</h5></a>
                                         <div>
                                             ({{a.agent_average_rating|floatformat:1|default:0.0}})
                                             {% for i in "12345" %}
@@ -74,7 +74,8 @@
                                             <span class="lang-tag">English</span>
                                             <span class="lang-tag">Mandarin</span>
                                         </div> -->
-                                        <a href="{% url 'agent:agent_details' a.agent_id %}" class="view-listings">View Listings</a>
+                                        <a href="{% url 'agent:agent_listings' a.agent_id %}" class="view-listings">View Listings</a> <br>
+                                        <!-- <a href="{% url 'agent:agent_details' a.agent_id %}" class="view-listings">View Profile</a> -->
                                     </div>
                                 </div>
                             </div>
