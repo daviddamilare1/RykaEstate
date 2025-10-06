@@ -51,6 +51,7 @@ def houses(request):
     featured_houses = House.objects.filter(featured=True, status='live', agent__verified=True, is_sold=False).order_by('-id')
     
     
+    
 
     context = {
         'houses': houses,
