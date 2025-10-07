@@ -1,0 +1,50 @@
+{% load humanize %}
+<div class="row g-4" id="apartment-list">
+    {% for a in apartments %}
+        <div class="col-lg-6 col-md-6">
+            <div class="property-card">
+                <div class="property-image">
+                    <img src="{{a.image.url}}" alt="Modern Family Home" class="img-fluid" />
+                    <div class="property-badges">
+                        {% if a.featured == True %}
+                            <span class="badge featured">Featured</span>
+                        {%endif %}
+                        
+                    </div>
+                    <div class="property-overlay">
+                        <button class="favorite-btn"><i class="bi bi-heart"></i></button>
+                        <!-- <button class="gallery-btn" data-count="12"><i class="bi bi-images"></i></button> -->
+                    </div>
+                </div>
+                <div class="property-content">
+                    <div class="property-price">${{a.price|floatformat:0|intcomma}}/day</div>
+                    <h4 class="property-title">{{a.name}}</h4>
+                    <p class="property-location"><i class="bi bi-geo-alt"></i> {{a.address}}</p>
+                    <div class="property-features">
+                        <span><i class="bi bi-house"></i> {{a.bedrooms}} Bed</span>
+                        <span><i class="bi bi-water"></i> {{a.bathrooms}} Bath</span>                                            
+                        <span><i class="bi bi-car-front"></i> {{a.garage|default:0}} garage</span>                                                
+                        <!-- <span><i class="bi bi-arrows-angle-expand"></i>{{a.sq_ft}} sqft</span> -->
+                    </div>
+                    <div class="property-agent">
+                        <img src="{{a.agent.image.url}}" alt="Agent" class="agent-avatar" />
+                        <div class="agent-info">
+                            <strong>{{a.agent.full_name}}</strong>
+                            <div class="agent-contact">
+                                <small><i class="bi bi-telephone"></i> {{a.agent.phone}}</small>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{% url 'core:apt_details' a.apt_id a.agent.agent_id %}" class="btn btn-primary w-100">View Details</a>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <div class="col-12">
+            <p>No apartments found matching your criteria.</p>
+        </div>
+    {% endfor %}
+    <!-- End Property Item -->
+
+    
+</div>

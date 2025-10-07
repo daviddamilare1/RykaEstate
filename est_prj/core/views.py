@@ -6,7 +6,7 @@ from core.models import *
 from userauths.models import Profile
 from agents import models as agent_models
 from customer import models as customer_models
-from django.db.models import Avg
+from django.db.models import Avg, Q
 
 
 
@@ -45,21 +45,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 
-        # Houses
-def houses(request):
-    houses = House.objects.filter(status='live', agent__verified=True, is_sold=False).order_by('-id')
-    featured_houses = House.objects.filter(featured=True, status='live', agent__verified=True, is_sold=False).order_by('-id')
-    
-    
-    
 
-    context = {
-        'houses': houses,
-        'featured_houses':featured_houses
-       
-    }
-
-    return render(request, 'core/houses.html', context)
 
 
 
@@ -69,19 +55,126 @@ def houses(request):
 
         # APARTMENTS
 def apartments(request):
-    apartments = Apartment.objects.filter(status='live', is_available=True, agent__verified=True).order_by('-id')
+    # Initialize the base queryset
+    apartments = Apartment.objects.filter(status='live', is_available=True, agent__verified=True)
     featured_apartments = Apartment.objects.filter(featured=True, status='live', is_available=True, agent__verified=True).order_by('-id')
+    
+    # Get filter parameters from the request
+    min_price = request.GET.get('min_price')
+    max_price = request.GET.get('max_price')
+    sort = request.GET.get('sort', '-id')
+    state = request.GET.get('state')
+
+
+    # Apply filters based on provided parameters
+    if min_price:
+        try:
+            apartments = apartments.filter(price__gte=float(min_price))
+        except ValueError:
+            pass
+
+
+    if max_price:
+        try:
+            apartments = apartments.filter(price__lte=float(max_price))
+        except ValueError:
+            pass
+
+
+    if state:
+        try:
+            apartments = apartments.filter(state=state)
+        except ValueError:
+            pass
+
+   
+
+    # Apply sorting
+    apartments = apartments.order_by(sort)
+
+    context = {
+        'apartments': apartments,
+        'featured_apartments': featured_apartments,
+        'states': STATE,
+        'selected_filters': {
+            'min_price': min_price or '',
+            'max_price': max_price or '',
+            'state': state or '',
+            'sort': sort,
+            
+        }
+    }
+
+    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        from django.template.loader import render_to_string
+        apartments_html = render_to_string('core/apartment_list.html', {'apartments': apartments})
+        return JsonResponse({'apartments_html': apartments_html})
+
+    return render(request, 'core/apartments.html', context)
+
+
+
+
+
+
+        # Houses
+def houses(request):
+    houses = House.objects.filter(status='live', agent__verified=True, is_sold=False).order_by('-id')
+    featured_houses = House.objects.filter(featured=True, status='live', agent__verified=True, is_sold=False).order_by('-id')
+    
+
+    min_price = request.GET.get('min_price')
+    max_price = request.GET.get('max_price')
+    bedrooms = request.GET.get('bedrooms')
+    bathrooms = request.GET.get('bathrooms')
+    state = request.GET.get('state')
+    sort = request.GET.get('sort', '-id')
+    
+
+
+    if min_price:
+        try:
+            houses = houses.filter(price__gte = float(min_price))
+        except ValueError:
+            pass
+
+    if max_price:
+        try:
+            houses = houses.filter(price__lte = float(max_price))
+        
+        except ValueError:
+            pass
+    
+    if state:
+        try:
+            houses = houses.filter(state=state)
+        except ValueError:
+            pass
+
+    
+
+    houses = houses.order_by(sort)
+
+
     
     
 
     context = {
-        'apartments': apartments,
-        'featured_apartments':featured_apartments,
+        'houses': houses,
+        'featured_houses':featured_houses,
+        'states': STATE,
+        'selcted_filters':{
+            'min_price':min_price or '',
+            'max_price': max_price or '',
+            'state': state or '',
+            'sort': sort
+        }
        
     }
 
-    return render(request, 'core/apartments.html', context)
+    
 
+    return render(request, 'core/houses.html', context)
 
 
 
