@@ -82,16 +82,7 @@
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="properties-sidebar">
                         <form class="filter-widget" id="filter-form">
-                            <h5 class="filter-title">Filter Properties</h5>
-
-                            <!-- <div class="filter-section">
-                                <label class="form-label">Property Type</label>
-                                <select class="form-select">
-                                    <option>All Types</option>
-                                    <option>House</option>
-                                    <option>Apartment</option>
-                                </select>
-                            </div> -->
+                            <h5 class="filter-title">Filter Apartments</h5>
 
                             <div class="filter-section">
                                 <label class="form-label">Price Range</label>
@@ -123,20 +114,20 @@
                         </form>
 
                         <div class="featured-properties mt-4">
-                            <h5>Featured Properties</h5>
+                            <h5>Featured Apartments</h5>
                             {% for a in featured_apartments %}
-                            <div class="featured-item">
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-5">
-                                        <a href="{% url 'core:apt_details' a.apt_id a.agent.agent_id %}"><img src="{{a.image.url}}" alt="Property" class="img-fluid rounded" style="max-width: 80px; object-fit: cover; width: 100px;" /></a>
-                                    </div>
-                                    <div class="col-7">
-                                        <h6 class="mb-1">{{a.name}}</h6>
-                                        <p class="text-muted small mb-1">{{a.state}}, {{a.city}}</p>
-                                        <strong class="text-primary">${{a.price|floatformat:0|intcomma}}</strong>
+                                <div class="featured-item">
+                                    <div class="row g-3 align-items-center">
+                                        <div class="col-5">
+                                            <a href="{% url 'core:apt_details' a.apt_id a.agent.agent_id %}"><img src="{{a.image.url}}" alt="Property" class="img-fluid rounded" style="max-width: 80px; object-fit: cover; width: 100px;" /></a>
+                                        </div>
+                                        <div class="col-7">
+                                            <h6 class="mb-1">{{a.name}}</h6>
+                                            <p class="text-muted small mb-1">{{a.state}}, {{a.city}}</p>
+                                            <strong class="text-primary">${{a.price|floatformat:0|intcomma}}</strong>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             {% endfor %}
                         </div>
                     </div>

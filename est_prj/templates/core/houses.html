@@ -34,58 +34,21 @@
                                     
                                 </div>
                                 <div class="sort-dropdown">
-                                    <select class="form-select form-select-sm">
-                                        <option>Sort by: Newest</option>
-                                        <option>Price: Low to High</option>
-                                        <option>Price: High to Low</option>
-                                        <option>Most Viewed</option>
+                                    <select id="sort" class="form-select form-select-sm">
+                                        <option>Sort by:</option>
+                                        <option value="-id" {% if selected_filters.sort == '-id' %}selected{% endif %}>Newest</option>
+                                        <option value="id" {% if selected_filters.sort == 'id' %}selected{% endif %}>Oldest</option>
+                                        <option value="price" {% if selected_filters.sort == 'price' %}selected{% endif %}>Price: Low to High</option>
+                                        <option value="-price" {% if selected_filters.sort == '-price' %}selected{% endif %}>Price: High to Low</option>
+                                        
                                     </select>
                                 </div>
                             </div>
                         </div>
 
                         <div class="properties-grid view-grid active" data-aos="fade-up" data-aos-delay="200">
-                            <div class="row g-4">
-                                {% for h in houses %}
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="property-card">
-                                            <div class="property-image">
-                                                <a href="{% url 'core:house_details' h.hid h.agent.agent_id %}"><img src="{{h.image.url}}" alt="Modern Family Home" class="img-fluid" /></a>
-                                                <div class="property-badges">
-                                                    {% if a.featured == True %}
-                                                        <span class="badge featured">Featured</span>
-                                                    {%endif %}
-                                                    
-                                                </div>
-                                                <div class="property-overlay">
-                                                    <button class="favorite-btn"><i class="bi bi-heart"></i></button>
-                                                    <!-- <button class="gallery-btn" data-count="12"><i class="bi bi-images"></i></button> -->
-                                                </div>
-                                            </div>
-                                            <div class="property-content">
-                                                <div class="property-price">${{h.price|floatformat:0|intcomma}}</div>
-                                                <h4 class="property-title">{{h.name}}</h4>
-                                                <p class="property-location"><i class="bi bi-geo-alt"></i> {{h.address}}</p>
-                                                <div class="property-features">
-                                                    <span><i class="bi bi-house"></i> {{h.bedrooms}} Bed</span>
-                                                    <span><i class="bi bi-water"></i> {{h.bathrooms}} Bath</span>                                            
-                                                    <span><i class="bi bi-car-front"></i> {{h.garage|default:0}} garage</span>                                                
-                                                    <!-- <span><i class="bi bi-arrows-angle-expand"></i>{{h.sq_ft}} sqft</span> -->
-                                                </div>
-                                                <div class="property-agent">
-                                                    <img src="{{h.agent.image.url}}" alt="Agent" class="agent-avatar" />
-                                                    <div class="agent-info">
-                                                        <strong>{{h.agent.full_name}}</strong>
-                                                        <div class="agent-contact">
-                                                            <small><i class="bi bi-telephone"></i> {{h.agent.phone}}</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <a href="{% url 'core:house_details' h.hid h.agent.agent_id %}" class="btn btn-primary w-100">View Details</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {% endfor %}
+                            <div class="row g-4" id="house-list">
+                                {% include 'core/house_list.html' %}
                                 <!-- End Property Item -->
 
                                 
@@ -111,86 +74,39 @@
 
                     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="properties-sidebar">
-                            <div class="filter-widget">
-                                <h5 class="filter-title">Filter Properties</h5>
-
-                                <div class="filter-section">
-                                    <label class="form-label">Property Type</label>
-                                    <select class="form-select">
-                                        <option>All Types</option>
-                                        <option>House</option>
-                                        <option>Apartment</option>
-                                        <option>Condo</option>
-                                        <option>Townhouse</option>
-                                        <option>Commercial</option>
-                                    </select>
-                                </div>
+                            <form class="filter-widget" id="filter-form">
+                                <h5 class="filter-title">Filter Houses</h5>
 
                                 <div class="filter-section">
                                     <label class="form-label">Price Range</label>
                                     <div class="row g-2">
                                         <div class="col-6">
-                                            <input type="number" class="form-control" placeholder="Min Price" />
+                                            <input type="number" class="form-control" name="min_price" placeholder="Min Price" value="{{ selected_filters.min_price }}">
                                         </div>
                                         <div class="col-6">
-                                            <input type="number" class="form-control" placeholder="Max Price" />
+                                            <input type="number" class="form-control" name="max_price" placeholder="Max Price" value="{{ selected_filters.max_price }}">
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="filter-section">
-                                    <label class="form-label">Bedrooms</label>
-                                    <div class="bedroom-filter">
-                                        <button class="btn btn-outline-secondary btn-sm filter-btn active">Any</button>
-                                        <button class="btn btn-outline-secondary btn-sm filter-btn">1+</button>
-                                        <button class="btn btn-outline-secondary btn-sm filter-btn">2+</button>
-                                        <button class="btn btn-outline-secondary btn-sm filter-btn">3+</button>
-                                        <button class="btn btn-outline-secondary btn-sm filter-btn">4+</button>
-                                    </div>
-                                </div>
-
-                                <div class="filter-section">
-                                    <label class="form-label">Bathrooms</label>
-                                    <div class="bathroom-filter">
-                                        <button class="btn btn-outline-secondary btn-sm filter-btn active">Any</button>
-                                        <button class="btn btn-outline-secondary btn-sm filter-btn">1+</button>
-                                        <button class="btn btn-outline-secondary btn-sm filter-btn">2+</button>
-                                        <button class="btn btn-outline-secondary btn-sm filter-btn">3+</button>
-                                    </div>
-                                </div>
 
                                 <div class="filter-section">
                                     <label class="form-label">Location</label>
-                                    <input type="text" class="form-control" placeholder="Enter city or neighborhood" />
+                                    <select class="form-control" name="state">
+                                        <option value="">Select State</option>
+                                        {% for state in states %}
+                                            <option value="{{ state.0 }}" {% if selected_filters.state == state.0 %}selected{% endif %}>{{ state.1 }}</option>
+                                        {% endfor %}
+                                    </select>
                                 </div>
 
-                                <div class="filter-section">
-                                    <label class="form-label">Features</label>
-                                    <div class="features-filter">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="garage" />
-                                            <label class="form-check-label" for="garage">Garage</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="pool" />
-                                            <label class="form-check-label" for="pool">Swimming Pool</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="balcony" />
-                                            <label class="form-check-label" for="balcony">Balcony</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="garden" />
-                                            <label class="form-check-label" for="garden">Garden</label>
-                                        </div>
-                                    </div>
-                                </div>
+                                
 
-                                <button class="btn btn-primary w-100">Apply Filters</button>
-                            </div>
+                                <button type="submit" class="btn btn-primary w-100">Apply Filters</button>
+                            </form>
 
                             <div class="featured-properties mt-4">
-                                <h5>Featured Properties</h5>
+                                <h5>Featured Houses</h5>
                                 {% for h in featured_houses %}
                                     <div class="featured-item">
                                         <div class="row g-3 align-items-center">
@@ -215,6 +131,41 @@
         </section>
         <!-- /Properties Section -->
     </main>
+
+
+    <script>
+        document.getElementById('filter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const sortValue = document.getElementById('sort').value;
+            if (sortValue) {
+                formData.set('sort', sortValue);
+            }
+
+            const params = new URLSearchParams(formData).toString();
+            const url = '{% url "core:houses" %}?' + params;
+
+            fetch(url, {
+                method: 'GET',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                const houseList = document.getElementById('house-list');
+                houseList.innerHTML = data.houses_html;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while filtering houses.');
+            });
+        });
+
+        document.getElementById('sort').addEventListener('change', function() {
+            document.getElementById('filter-form').dispatchEvent(new Event('submit'));
+        });
+    </script>
 
 {% endblock %}
 

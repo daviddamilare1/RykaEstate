@@ -125,8 +125,6 @@ def houses(request):
 
     min_price = request.GET.get('min_price')
     max_price = request.GET.get('max_price')
-    bedrooms = request.GET.get('bedrooms')
-    bathrooms = request.GET.get('bathrooms')
     state = request.GET.get('state')
     sort = request.GET.get('sort', '-id')
     
@@ -151,19 +149,14 @@ def houses(request):
         except ValueError:
             pass
 
-    
 
     houses = houses.order_by(sort)
-
-
-    
-    
 
     context = {
         'houses': houses,
         'featured_houses':featured_houses,
         'states': STATE,
-        'selcted_filters':{
+        'selected_filters':{
             'min_price':min_price or '',
             'max_price': max_price or '',
             'state': state or '',
@@ -172,7 +165,13 @@ def houses(request):
        
     }
 
-    
+
+    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        from django.template.loader import render_to_string
+        houses_html = render_to_string('core/house_list.html', {'houses': houses})
+        return JsonResponse({'houses_html': houses_html})
+
+
 
     return render(request, 'core/houses.html', context)
 
