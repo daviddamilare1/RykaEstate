@@ -184,20 +184,107 @@ def index(request):
 
     houses = House.objects.filter(featured=True, status='live', agent__verified=True, is_sold=False)
     apartments = Apartment.objects.filter(featured=True, status='live', is_available=True, agent__verified=True)
+
     
+
 
     context = {
         'houses': houses,
         'apartments':apartments,
+        'states': STATE,
+        'selected_filters': {
+            'property_type': '',
+            'state': '',
+            'min_price': '',
+            'max_price': '',
+            
+        }
     }
     
     return render(request, 'core/index.html', context)
 
+######################################################################################
+        
+        # FILTER PROPERTIES
+def filter_properties(request):
+    houses = House.objects.filter(status='live', agent__verified=True, is_sold=False).order_by('-id')
+    apartments = Apartment.objects.filter(status='live', is_available=True, agent__verified=True).order_by('-id')
+
+
+    if request.method == 'GET':
+        property_type = request.GET.get('property_type')
+        min_price = request.GET.get('min_price')
+        max_price = request.GET.get('max_price')
+        state = request.GET.get('state')
+        
+
+        properties = None
+
+        if property_type == 'house':
+            properties = houses
+        elif property_type == 'apartment':
+            properties = apartments
+        else:
+            # If no property_type is selected, combine both
+            properties = houses | apartments
+        
+        if min_price:
+            try:
+                properties = properties.filter(price__gte = float(min_price))
+            except ValueError:
+                pass
+
+        if max_price:
+            try:
+                properties = properties.filter(price__lte = float(max_price))
+            except ValueError:
+                pass
+        
+        if state:
+            try:
+                properties = properties.filter(state__iexact=state)
+            except ValueError:
+                pass
+
+    
 
 
 
 
 
+    context = {
+        'houses': houses,
+        'apartments':apartments,
+        'properties': properties,
+        'states': STATE,
+        'selected_filters': {
+            'min_price': min_price or '',
+            'max_price': max_price or '',
+            'property_type': property_type or '',
+            'state': state or '',
+            
+        }
+    }
+    
+    return render(request, 'core/filter_properties.html', context)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+########################################################################################
 
         # HOUSE DETAILS
 def house_details(request, hid, agent_id):

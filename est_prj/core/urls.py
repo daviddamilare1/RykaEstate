@@ -15,6 +15,9 @@ urlpatterns = [
         # APARTMENTS
     path('apartments', apartments, name='apartments'),
 
+        # FILTER PROPERTIES
+    path('filter_properties', filter_properties, name='filter_properties'),
+
         # HOUSE DETAILS
     path('house_details/<hid>/<agent_id>/', house_details, name='house_details'),
 

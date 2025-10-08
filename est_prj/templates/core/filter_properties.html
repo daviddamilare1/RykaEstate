@@ -1,0 +1,80 @@
+{% extends "partials/base.html" %}
+{% load humanize %}
+{% load static %}
+{% block content  %}
+
+
+    <section id="featured-properties" class="featured-properties section" style="margin-top: 50px;">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up" style="padding-top: 30px;">
+            {% if selected_filters.property_type == 'house' %}
+                <h2>Featured Houses</h2>
+            {% elif selected_filters.property_type == 'apartment' %}
+                <h2>Featured Apartments</h2>
+            {% else %}
+                <h2>Featured Properties</h2>
+            {% endif %}
+            
+            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="row gy-4 mt-4">
+                {% for p in properties %}
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                        <article class="stack-card">
+                            <figure class="stack-media">
+                                <img src="{{p.image.url}}" alt="Modern Facade" class="img-fluid" loading="lazy" />
+                                <figcaption>
+                                    <span class="chip exclusive">FEATURED</span>
+                                </figcaption>
+                            </figure>
+                            <div class="stack-body">
+                                <h5>
+                                    
+                                     {% if p.hid %}
+                                        <a href="{% url 'core:house_details' p.hid p.agent.agent_id %}">{{p.name}}</a>
+                                    {% elif p.apt_id %}
+                                        <a href="{% url 'core:apt_details' p.apt_id p.agent.agent_id %}">{{p.name}}</a>
+                                    {% endif %}
+                                
+                                </h5>
+                                <div class="stack-loc"><i class="fas fa-map-marker-alt"></i> {{p.state}}, {{p.city}}, {{p.address}}</div>
+
+                                <ul class="stack-specs">
+                                    <li><i class="fas fa-bed bed-icon"></i> {{p.bedrooms}}</li>
+                                    <li><i class="fas fa-bath"></i> {{p.bathrooms}}</li>
+                                    <li><i class="fas fa-ruler-combined"></i> {{p.sq_ft|floatformat:0|intcomma}} sq ft</li>
+                                    <li><i class="fas fa-tree"></i> {{p.acres|floatformat:2}} acres</li>
+                                    <li><i class="fas fa-calendar"></i> {{p.year_build}}</li>
+                                    <li><i class="fas fa-car"></i> {{p.garage}}</li>
+                                </ul>
+                                <div class="stack-foot">
+                                    <span class="stack-price">${{p.price|floatformat:0|intcomma}}</span>
+                                    {% if p.hid %}
+                                        <a href="{% url 'core:house_details' p.hid p.agent.agent_id %}" class="stack-link">View</a>
+                                    {% elif p.apt_id %}
+                                        <a href="{% url 'core:apt_details' p.apt_id p.agent.agent_id %}" class="stack-link">View</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                {% empty %}
+                    <div class="col-12">
+                        {% if selected_filters.property_type == 'house' %}
+                            <p>No houses found matching your criteria.</p>
+                        {% elif selected_filters.property_type == 'apartment' %}
+                            <p>No apartments found matching your criteria.</p>
+                        {% else %}
+                            <p>No properties found matching your criteria.</p>
+                        {% endif %}
+                        
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
