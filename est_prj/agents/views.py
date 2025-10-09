@@ -54,6 +54,7 @@ def agent_details(request, agent_id):
     if request.user.is_authenticated:
         agent = Agent.objects.get(agent_id=agent_id, verified=True)
         agent_rating = AgentReview.objects.filter(agent=agent).aggregate(avg_rating=models.Avg('rating'))['avg_rating']
+        houses_sold = House.objects.filter(agent=agent, is_sold=True)
         
         agent_rating = round(agent_rating) if agent_rating is not None else 0
     
@@ -122,6 +123,7 @@ def agent_details(request, agent_id):
         'agent_rating':agent_rating,
         'apartments': apartments,
         'houses': houses,
+        'houses_sold': houses_sold,
 
     }
 

@@ -1,6 +1,7 @@
 
 {% extends "partials/base.html" %}
 {% load humanize %}
+{% load format_price %}
 {% load static %}
 {% block content  %}
 
@@ -77,17 +78,17 @@
                             </div>
                         </div>
                         <div class="quick-stat">
-                            <span class="stat-value">156</span>
+                            <span class="stat-value">{{agent.}}</span>
                             <span class="stat-label">Properties Sold</span>
                         </div>
                         <div class="quick-stat">
                             <span class="stat-value">{{agent.years_of_exp}}+</span>
                             <span class="stat-label">Years Experience</span>
                         </div>
-                        <!-- <div class="quick-stat">
-                            <span class="stat-value">{{agent.min_price}} - {{agent.max_price}}</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div> -->
+                        <div class="quick-stat">
+                            <span class="stat-value">{{agent.min_price|format_price}} - {{agent.max_price|format_price}}</span>
+                            <span class="stat-label">Min/Max Price</span>
+                        </div>
                     </div>
                 </div>
                 </div>
