@@ -26,15 +26,17 @@
                         <span><i class="bi bi-car-front"></i> {{a.garage|default:0}} garage</span>                                                
                         <!-- <span><i class="bi bi-arrows-angle-expand"></i>{{a.sq_ft}} sqft</span> -->
                     </div>
-                    <div class="property-agent">
-                        <img src="{{a.agent.image.url}}" alt="Agent" class="agent-avatar" />
-                        <div class="agent-info">
-                            <strong>{{a.agent.full_name}}</strong>
-                            <div class="agent-contact">
-                                <small><i class="bi bi-telephone"></i> {{a.agent.phone}}</small>
+                    <a href="{% url 'agent:agent_details' a.agent.agent_id %}">
+                        <div class="property-agent">
+                            <img src="{{a.agent.image.url}}" alt="Agent" class="agent-avatar" />
+                            <div class="agent-info">
+                                <strong>{{a.agent.full_name}}</strong>
+                                <div class="agent-contact">
+                                    <small><i class="bi bi-telephone"></i> {{a.agent.phone}}</small>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     <a href="{% url 'core:apt_details' a.apt_id a.agent.agent_id %}" class="btn btn-primary w-100">View Details</a>
                 </div>
             </div>

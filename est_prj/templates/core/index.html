@@ -24,22 +24,22 @@
                                                     <option value="{{ state.0 }}" {% if selected_filters.state == state.0 %}selected{% endif %}>{{ state.1 }}</option>
                                                 {% endfor %}
                                             </select>
-                                            <!-- <label for="location">Select Location</label> -->
+                                            <label for="location">Select Location</label>
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-floating">
-                                            <select class="form-select" id="property-type" name="property_type" required="">
+                                            <select class="form-control" id="property-type" name="property_type" required="">
                                                 <option value="">Select Property Type</option>
                                                 <option value="house" {% if selected_filters.property_type == 'house' %}selected{% endif %}>Houses</option>
                                                 <option value="apartment" {% if selected_filters.property_type == 'apartment' %}selected{% endif %}>Apartments</option>
                                             </select>
-                                            <!-- <label for="property-type">Property Type</label> -->
+                                            <label for="property-type">Property Type</label>
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <!-- <div class="col-md-6">
                                         <div class="form-floating">
                                             <div class="row g-2">
                                                 <div class="col-6">
@@ -49,7 +49,20 @@
                                                     <input type="number" class="form-control" name="max_price" placeholder="Max Price" value="{{ selected_filters.max_price }}">
                                                 </div>
                                             </div>
-                                            <!-- <label for="price-range">Price Range</label> -->
+                                           
+                                        </div>
+                                    </div> -->
+
+                                    <div class="col-6">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" name="min_price" placeholder="Min Price" value="{{ selected_filters.min_price }}">
+                                            <label for="location">Min Price</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" name="max_price" placeholder="Max Price" value="{{ selected_filters.max_price }}">
+                                            <label for="location">Max Price</label>
                                         </div>
                                     </div>
 
