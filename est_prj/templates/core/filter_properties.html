@@ -27,7 +27,9 @@
                             <figure class="stack-media">
                                 <img src="{{p.image.url}}" alt="Modern Facade" class="img-fluid" loading="lazy" />
                                 <figcaption>
-                                    <span class="chip exclusive">FEATURED</span>
+                                    {% if p.featured == True %}
+                                        <span class="chip exclusive">FEATURED</span>
+                                    {% endif %}
                                 </figcaption>
                             </figure>
                             <div class="stack-body">
