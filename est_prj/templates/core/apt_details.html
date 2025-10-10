@@ -322,7 +322,7 @@
                 {% if review_exist %}
                     <input type="hidden">
                 {% else %}
-                    <form method="POST" action="{% url 'core:add_comment' apartment.apt_id %}" role="form" id="review-form"> {% csrf_token %}
+                    <form method="POST" action="{% url 'core:add_comment' apartment.apt_id %}" role="form" id="apartment-review-form"> {% csrf_token %}
                         <div class="form-header">
                             <h3>Leave a Review</h3>
                             <p>Your email address will not be published.</p>
@@ -366,7 +366,7 @@
 
     </main>
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-        <script src="{% static 'assets/js/function.js' %}"></script>
+        <!-- <script src="{% static 'assets/js/function.js' %}"></script> -->
     
     <script>
         // Debug jQuery and function.js loading

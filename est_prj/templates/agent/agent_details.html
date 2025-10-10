@@ -71,7 +71,7 @@
                         <div class="quick-stat">
                             
                             <span class="stat-value">{{agent_rating|floatformat:1}}</span>
-                            <div>
+                            <div style="margin-top: -2.1px;">
                                 {% for i in "12345" %}
                                     <i class="fas fa-star {% if agent.agent_average_rating >= forloop.counter %}text-warning{% endif %}" style="font-size: 14px;"></i>
                                 {% endfor %}
@@ -82,13 +82,17 @@
                             <span class="stat-label">Properties Sold</span>
                         </div>
                         <div class="quick-stat">
+                            <span class="stat-value">{{total_house_revenue|format_price|default:0}}</span>
+                            <span class="stat-label">Total House Sales</span>
+                        </div>
+                        <div class="quick-stat">
                             <span class="stat-value">{{agent.years_of_exp}}+</span>
                             <span class="stat-label">Years Experience</span>
                         </div>
-                        <div class="quick-stat">
+                        <!-- <div class="quick-stat">
                             <span class="stat-value">{{agent.min_price|format_price}} - {{agent.max_price|format_price}}</span>
-                            <span class="stat-label">Min/Max Price</span>
-                        </div>
+                            <span class="stat-label" style="margin-top: -2px;">Min/Max Price</span>
+                        </div> -->
                     </div>
                 </div>
                 </div>
@@ -469,46 +473,43 @@
 
         <section id="blog-comment-form" class="blog-comment-form section">
             <div class="container" data-aos="fade-up" data-aos-delay="100">
-                {% if review_exist %}
-                    <input type="hidden">
-                {% else %}
-                    <form method="POST" action="{% url 'agent:add_comment' agent.agent_id %}" role="form" id="review-form"> {% csrf_token %}
-                        <div class="form-header">
-                            <h3>Leave a Review</h3>
-                            <p>Your email address will not be published.</p>
+    
+                <form method="POST" action="{% url 'agent:add_comment' agent.agent_id %}" role="form" id="review-form"> {% csrf_token %}
+                    <div class="form-header">
+                        <h3>Leave a Review</h3>
+                        <p>Your email address will not be published.</p>
+                    </div>
+
+
+                        <div class="col-12">
+                            <div class="input-group">
+                                <label for="comment">Your Comment *</label>
+                                <textarea name="comment" id="comment" rows="5" placeholder="Write your thoughts here..." required=""></textarea>
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Rating *</label>  <br>
+                                <select name="rating" id="rating" class="form-control mt-1 mb-3" required>
+                                    <option value="1">★☆☆☆☆</option>
+                                    <option value="2">★★☆☆☆</option>
+                                    <option value="3">★★★☆☆</option>
+                                    <option value="4">★★★★☆</option>
+                                    <option value="5">★★★★★</option>
+                                </select>
+                                
+                            </div>
                         </div>
 
 
-                            <div class="col-12">
-                                <div class="input-group">
-                                    <label for="comment">Your Comment *</label>
-                                    <textarea name="comment" id="comment" rows="5" placeholder="Write your thoughts here..." required=""></textarea>
-                                    
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label>Rating *</label>  <br>
-                                    <select name="rating" id="rating" class="form-control mt-1 mb-3" required>
-                                        <option value="1">★☆☆☆☆</option>
-                                        <option value="2">★★☆☆☆</option>
-                                        <option value="3">★★★☆☆</option>
-                                        <option value="4">★★★★☆</option>
-                                        <option value="5">★★★★★</option>
-                                    </select>
-                                    
-                                </div>
-                            </div>
-
-
-                            <div class="col-12 text-center">
-                                <button type="submit">Post Comment</button>
-                            </div>
-                    
-                    </form>
-                {% endif %}
+                        <div class="col-12 text-center">
+                            <button type="submit">Post Comment</button>
+                        </div>
                 
+                </form>
+                            
             </div>
         </section>
 

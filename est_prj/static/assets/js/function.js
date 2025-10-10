@@ -73,7 +73,7 @@
 
                 const formData = new FormData(this);
                 const csrfToken = getCookie('csrftoken');
-                const isAgentReview = $form.attr('action').includes('agent/add_comment');
+                // const isAgentReview = $form.attr('action').includes('agent/add_comment');
 
                 console.log('Form data:', [...formData.entries()]);
 
@@ -126,12 +126,13 @@
                             const currentCount = parseInt($commentCount.text()) || 0;
                             $commentCount.text(currentCount + 1);
                             console.log('Review added, comment count updated to:', currentCount + 1);
-                            if (isAgentReview) {
-                                $form.hide();
-                                const $reviewExistMessage = $('<p>').text('You have already submitted a review for this agent.');
-                                $form.parent().prepend($reviewExistMessage);
-                            }
+
+                            $form.hide();
+                            // const $reviewExistMessage = $('<p>').text('You have already submitted a review for this agent.');
+                            // $form.parent().prepend($reviewExistMessage);
+                            
                             showMessage('Thank you for your review!', 'success');
+
                         } else {
                             console.error('Failed to submit review:', data.error);
                             showMessage(data.error || 'Failed to submit review. Please try again.', 'error');

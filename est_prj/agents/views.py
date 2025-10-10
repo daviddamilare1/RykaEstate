@@ -55,6 +55,7 @@ def agent_details(request, agent_id):
         agent = Agent.objects.get(agent_id=agent_id, verified=True)
         agent_rating = AgentReview.objects.filter(agent=agent).aggregate(avg_rating=models.Avg('rating'))['avg_rating']
         houses_sold = House.objects.filter(agent=agent, is_sold=True)
+        total_house_revenue = House.objects.filter(is_sold=True, agent=agent).aggregate(price= models.Sum('price'))['price']
         
         agent_rating = round(agent_rating) if agent_rating is not None else 0
     
@@ -124,6 +125,7 @@ def agent_details(request, agent_id):
         'apartments': apartments,
         'houses': houses,
         'houses_sold': houses_sold,
+        'total_house_revenue': total_house_revenue,
 
     }
 
@@ -177,6 +179,7 @@ def add_comment(request, agent_id):
                         'id': review.id,
                         'full_name': review.user.profile.full_name,
                         'rating': int(review.rating),
+                        'review': review.review,
                         'date': review.date.strftime('%Y-%m-%d %H:%M:%S'),
                         'profile_image': review.user.profile.image.url if review.user.profile.image else '/static/assets/img/person/default.jpg'
 
