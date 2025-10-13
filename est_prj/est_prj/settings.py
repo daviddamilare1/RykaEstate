@@ -50,15 +50,22 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-
+    
+    # Main Apps
     'core',
     'agents',
     'userauths',
     'customer',
 
+    # Dependencies
     'anymail',
     'django_ckeditor_5',
     'captcha',
+
+
+    # API 
+    'api',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

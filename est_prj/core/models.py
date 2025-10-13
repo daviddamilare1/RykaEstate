@@ -205,7 +205,7 @@ class House(models.Model):
     bedrooms = models.PositiveIntegerField(default=0)
     bathrooms = models.PositiveIntegerField(default=0)
     garage = models.PositiveIntegerField(null=True, blank=True)
-    category = models.ForeignKey(Categories, on_delete=models.SET_NULL, null=True)
+    category = models.ForeignKey(Categories, on_delete=models.SET_NULL, null=True, related_name='houses')
 
     state = models.CharField(max_length=20, choices=STATE, default=None)
     city = models.CharField(max_length=100, choices=CITY, default=None, null=True, blank=True)
@@ -337,7 +337,7 @@ class Apartment(models.Model):
     bedrooms = models.PositiveIntegerField(default=0)
     bathrooms = models.PositiveIntegerField(default=0)
     garage = models.PositiveIntegerField(null=True, blank=True)
-    category = models.ForeignKey(Categories, on_delete=models.SET_NULL, null=True)
+    category = models.ForeignKey(Categories, on_delete=models.SET_NULL, null=True, related_name='apartments')
 
     state = models.CharField(max_length=20, choices=STATE, default=None)
     city = models.CharField(max_length=100, choices=CITY, default=None, null=True, blank=True)

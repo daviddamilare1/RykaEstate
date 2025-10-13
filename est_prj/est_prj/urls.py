@@ -25,6 +25,8 @@ urlpatterns = [
     path('agents/', include('agents.urls')),
     # path('customer/', include('customer.urls')),
     path('user/', include('userauths.urls')),
+    path('apis/', include('api.urls')),
+
 
 ] 
 
