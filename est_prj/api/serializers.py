@@ -20,7 +20,7 @@ from core.models import *
 
 
 
-
+        # HOUSE SERIALIZERS
 class HouseSerializer(serializers.ModelSerializer):
     class Meta:
         model = House
@@ -61,11 +61,11 @@ class HouseDetailSerializer(serializers.ModelSerializer):
             'neigbourhood_info',
             
         ]
+##############################################################################
 
 
 
-
-
+        # APARTMENT SERIALIZERS
 class ApartmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Apartment
@@ -108,11 +108,9 @@ class ApartmentDetailSerializer(serializers.ModelSerializer):
             'neigbourhood_info',
             
         ]
+###########################################################################
 
-
-
-
-
+        # CATEGORY SERIALIZERS
 class CategoryListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Categories
@@ -130,6 +128,41 @@ class CategoryDetailSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'title', 'image', 'slug', 'houses', 'apartments'
         ]
+
+#######################################################################
+
+        # BOOKINGS SERIALIZERS
+class BookingsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Booking
+        fields = [
+            'user',
+            'payment_status',
+            'payment_method',
+            'full_name',
+            'phone',
+            'email',
+            'apartment',
+            'total',
+            'check_in_date',
+            'check_out_date',
+            'total_days',
+            'checked_in',
+            'checked_out',
+            'is_active',
+            'checked_in_tracker',
+            'checked_out_tracker',
+            'date',
+            'booking_id',
+            'success_id',
+            'stripe_payment_intent'
+        ]
+
+
+
+# clas
+
+
 
 
 
