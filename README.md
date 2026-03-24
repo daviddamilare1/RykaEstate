@@ -1,50 +1,67 @@
 # RykaEstate 🏠
 
-**RykaEstate** is a full-stack real estate platform that allows users to browse, search, rent, and buy properties.  
-Registered agents can list properties and go through a simple identity verification (KYC-like) process before publishing listings.
+**RykaEstate** is a full-stack real estate platform built with Django that allows users to browse, rent, and book properties while enabling agents to verify their identity and manage listings.
+
+## 🔥 Highlights
+- KYC-like agent verification system (ID upload + validation flow)
+- Multi-user agent profiles (ManyToMany relationship)
+- Property booking system (meetings, tours, apartment reservations)
+- Role-based dashboards (Agent & Customer)
+- Dynamic file upload system with structured media storage
+
+---
 
 ## 🚀 Features
 - User authentication  
-- Become an agent (required: full name, ID type, ID photo upload)  
-- One agent profile can be shared by multiple users
-- Users can book a meeting with an agent or book a house tour
-- Users can also book an apartment 
-- Agents own and list their properties
-- Filter search, Agent rating and Apartment rating
-- Customer dashboard and Agent dashboard
-- Clean uploads: `media/agents/<user_id>/`  
+- Become an agent (ID verification required)  
+- Property listing and ownership system  
+- Booking system (house tours, meetings, apartments)  
+- Filtered search  
+- Agent & apartment rating system  
+- Separate dashboards for agents and users
+- In-app notification 
 
-## ✨ Technologies
-- Backend: Django (Python)  
-- Frontend: BootstrapMade template + custom HTML/CSS/JS  
-- Database: PostgreSQL (recommended) / SQLite (development)  
-
-## ⚡ Quick Start
-
-- git clone https://github.com/daviddamilare1/RykaEstate.git
-
-- python -m venv venv
-- venv\Scripts\activate
-- pip install django pillow python-decouple
-- pip freeze > requirements.txt
-- create .env with SECRET_KEY, DEBUG=True, MEDIA_ROOT etc.
-- python manage.py migrate
-- python manage.py createsuperuser
-- python manage.py runserver
-
-
-##📍 The Process
 ---
-I wanted to build something real world useful while learning Django properly, especially authentication, file uploads, and ManyToMany relationships.
-Started with a custom user model, harder than I expected.
-Then built the agent registration form, making fields actually required both in models and forms took way more tries than it should have.
-Biggest headache, figuring out how to name uploaded ID photos using the user’s ID when user is a ManyToManyField. Had to use first and save the instance twice, not elegant but it works now.
 
-Learned a lot about request files, dynamic upload paths, form validation, migrations when changing null true to required fields, and why you should test file uploads early.
+## 🛠 Tech Stack
+- **Backend:** Django (Python)  
+- **Frontend:** Bootstrap + custom HTML/CSS/JS  
+- **Database:** PostgreSQL / SQLite  
 
-Not perfect yet, mobile form could look better, no agent approval flow, no fancy property search, but I am honestly happy I shipped something functional that solves a real need, agent verification.
+---
 
-Still a work in progress, but this taught me more than ten tutorial projects combined.
+---
+
+## ⚡ Setup Instructions
+
+```bash
+git clone https://github.com/daviddamilare1/RykaEstate.git
+cd RykaEstate
+
+python -m venv venv
+venv\Scripts\activate  # Windows
+
+pip install -r requirements.txt
+
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+
+
+## 📍 Development Journey
+
+This project was built to deeply understand Django beyond tutorials.
+
+Key challenges:
+
+Implementing a custom user model
+Handling ManyToMany relationships for agent profiles
+Managing dynamic file uploads (ID verification system)
+Debugging form validation and required fields
+Handling migrations when changing model constraints
+
+One major challenge was naming uploaded files based on user IDs when using ManyToMany relationships.
+This required saving the instance twice to properly attach file paths.
 
 
 ![image alt](https://github.com/daviddamilare1/RykaEstate/blob/d461de9d41971667b34cb099500b9e72aa8302fa/a6a4-102-89-75-177.ngrok-free.app_(Nest%20Hub%20Max).png)
