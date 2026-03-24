@@ -61,9 +61,11 @@ This required saving the instance twice to properly attach file paths.
 
 ---
 
+
 ## ⚡ Setup Instructions
 
 git clone https://github.com/daviddamilare1/RykaEstate.git
+
 cd RykaEstate
 
 python -m venv venv
