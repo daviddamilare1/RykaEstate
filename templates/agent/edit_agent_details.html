@@ -1,0 +1,178 @@
+{% extends 'partials/base2.html' %} {% load humanize %} {% load static %} {% block content %}
+
+<div id="dashboard">
+    <a href="#" class="utf_dashboard_nav_responsive"><i class="fa fa-reorder"></i> Dashboard Sidebar Menu</a>
+    {% include 'agent/sidebar.html' %}
+    <div class="utf_dashboard_content">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="utf_dashboard_list_box margin-top-0">
+                    <h4 class="gray"><i class="fas fa-user"></i> Profile Details</h4>
+                    <form class="row with-forms" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {% if form.errors or form.non_field_errors %}
+                                    <div class="alert alert-danger">
+                                        <!-- <h4>Form Errors</h4> -->
+                                        {% for error in form.non_field_errors %}
+                                            <p>{{ error }}</p>
+                                        {% endfor %}
+                                        {% for field in form %}
+                                            {% if field.errors %}
+                                                <p>{{ field.label }}: {{ field.errors|join:", " }}</p>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+
+                        <div class="utf_dashboard_list_box-static">
+                            <div class="my-profile">
+                                <div class="row with-forms">
+                                    <div class="col-md-12">
+                                        <div class="edit-profile-photo">
+                                            <img id="profile_image_preview" src="{{request.user.agents.image.url}}" style="width: 200px; height: 200px; object-fit: cover;" alt="" />
+                                            <div class="photoUpload">
+                                                <label><i class="fa fa-upload"></i> Upload Photo </label>
+                                                {{form.image}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label>Cover Image</label>
+                                        {{form.cover_img}}
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label>Full Name</label>
+                                        {{form.full_name}}
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label>Email</label>
+                                        {{form.email}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Mobile</label>
+                                        {{form.phone}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>About You</label>
+                                        {{form.desc}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Mission</label>
+                                        {{form.mission}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Country</label>
+                                        {{form.country}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>State</label>
+                                        {{form.state}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>City</label>
+                                        {{form.city}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Office Name</label>
+                                        {{form.office_name}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Office Address</label>
+                                        {{form.office_address}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Minimum Price Range</label>
+                                        {{form.min_price}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Maximum Price Range</label>
+                                        {{form.max_price}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Years of Experience</label>
+                                        {{form.years_of_exp}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Twitter</label>
+                                        {{form.twitter}}
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Instagram</label>
+                                        {{form.instagram}}
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Facebook</label>
+                                        {{form.facebook}}
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>WhatsApp</label>
+                                        {{form.whatsapp}}
+                                    </div>
+
+
+                                    <!-- <h4 class="text-center margin-top-45">Your Specialization</h4>  -->
+                                    {% if spec_formset.errors or spec_formset.non_form_errors %}
+                                        <div class="alert alert-danger">
+                                            <!-- <h4>Specialization Errors</h4> -->
+                                            {% for error in spec_formset.non_form_errors %}
+                                                <p>{{ error }}</p>
+                                            {% endfor %}
+                                            {% for form in spec_formset %}
+                                                {% if form.errors %}
+                                                    {% for field, errors in form.errors.items %}
+                                                        {% for error in errors %}
+                                                            <p>Specialization {{ forloop.parentloop.counter0 }} - {{ field }}: {{ error }}</p>
+                                                        {% endfor %}
+                                                    {% endfor %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                    
+
+                                    <div class="add_utf_listing_section margin-top-15">
+                                        <div class="utf_add_listing_part_headline_part">
+                                            <h3><i class="fa fa-certificate"></i>Specializations</h3>
+                                        </div>
+
+                                        <div class="row with-forms">
+                                            {{ spec_formset.management_form }} 
+                                            {% for spec_form in spec_formset %}
+                                                <div class="col-md-6">
+                                                    <label>Title</label>
+                                                    {{spec_form.title}}
+                                                    {{spec_form.about}}
+                                                    {{ spec_form.id }}
+                                                </div>
+                                                
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+      
+                            </div>
+                            <button class="button preview btn_center_item margin-top-15" type="submit">Save Changes</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Show Image Preview Before Upload
+    var loadFile = function (event) {
+        var output2 = document.getElementById("profile_image_preview");
+        output2.src = URL.createObjectURL(event.target.files[0]);
+        output2.onload = function () {
+            URL.revokeObjectURL(output2.src); // free memory :) hehe
+        };
+    };
+</script>
+
+{% endblock %}

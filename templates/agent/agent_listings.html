@@ -1,0 +1,102 @@
+{% extends "partials/base.html" %}
+{% load humanize %}
+{% load static %}
+{% block content  %}
+
+    <section id="featured-properties" class="featured-properties section" style="margin-top: 40px;">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up" style="padding-top: 30px;">
+            <h2>Houses Listed by {{agent.full_name|title}}</h2>
+            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="row gy-4 mt-4">
+                {% for h in houses %}
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                        <article class="stack-card">
+                            <figure class="stack-media">
+                                <img src="{{h.image.url}}" alt="Modern Facade" class="img-fluid" loading="lazy">
+                                <figcaption>
+                                    <span class="chip exclusive">FEATURED</span>
+                                </figcaption>
+                            </figure>
+                            <div class="stack-body">
+                                <h5><a href="{% url 'core:house_details' h.hid h.agent.agent_id %}">{{h.name}}</a></h5>
+                                <div class="stack-loc"><i class="fas fa-map-marker-alt"></i> {{h.state}}, {{h.city}}, {{h.address}}</div>
+                                    
+                                
+                                <ul class="stack-specs">
+                                    <li><i class="fas fa-bed bed-icon"></i> {{h.bedrooms}}</li>
+                                    <li><i class="fas fa-bath"></i> {{h.bathrooms}}</li>
+                                    <li><i class="fas fa-ruler-combined"></i> {{h.sq_ft|floatformat:0|intcomma}} sq ft</li>
+                                    <li><i class="fas fa-tree"></i> {{h.acres|floatformat:2}}  acres</li>
+                                    <li><i class="fas fa-calendar"></i> {{h.year_build}} </li>
+                                    <li><i class="fas fa-car"></i> {{h.garage}} </li>
+
+
+                                    
+                                </ul>
+                                <div class="stack-foot">
+                                    <span class="stack-price">${{h.price|floatformat:0|intcomma}}</span>
+                                    <a href="{% url 'core:house_details' h.hid h.agent.agent_id %}" class="stack-link">View</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                {% endfor %}
+            
+            </div>
+
+        </div>
+    </section>
+
+    <section id="featured-properties" class="featured-properties section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Aartments Listed by {{agent.full_name|title}}</h2>
+            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="row gy-4 mt-4">
+                {% for h in apartments %}
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                        <article class="stack-card">
+                            <figure class="stack-media">
+                                <img src="{{h.image.url}}" alt="Modern Facade" class="img-fluid" loading="lazy">
+                                <figcaption>
+                                    <span class="chip exclusive">FEATURED</span>
+                                </figcaption>
+                            </figure>
+                            <div class="stack-body">
+                                <h5><a href="{% url 'core:house_details' h.apt_id h.agent.agent_id %}">{{h.name}}</a></h5>
+                                <div class="stack-loc"><i class="fas fa-map-marker-alt"></i> {{h.state}}, {{h.city}}, {{h.address}}</div>
+                                    
+                                
+                                <ul class="stack-specs">
+                                    <li><i class="fas fa-bed bed-icon"></i> {{h.bedrooms}}</li>
+                                    <li><i class="fas fa-bath"></i> {{h.bathrooms}}</li>
+                                    <li><i class="fas fa-ruler-combined"></i> {{h.sq_ft|floatformat:0|intcomma}} sq ft</li>
+                                    <li><i class="fas fa-tree"></i> {{h.acres|floatformat:2}}  acres</li>
+                                    <li><i class="fas fa-calendar"></i> {{h.year_build}} </li>
+                                    <li><i class="fas fa-car"></i> {{h.garage}} </li>
+
+
+                                    
+                                </ul>
+                                <div class="stack-foot">
+                                    <span class="stack-price">${{h.price|floatformat:0|intcomma}}</span>
+                                    <a href="{% url 'core:house_details' h.apt_id h.agent.agent_id %}" class="stack-link">View</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                {% endfor %}
+            
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}
