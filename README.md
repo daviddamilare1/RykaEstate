@@ -22,16 +22,15 @@ Registered agents can list properties and go through a simple identity verificat
 ## ⚡ Quick Start
 
 - git clone https://github.com/daviddamilare1/RykaEstate.git
-- cd RykaEstate
-- - cd est_prj
+
 - python -m venv venv
 - venv\Scripts\activate
 - pip install django pillow python-decouple
 - pip freeze > requirements.txt
 - create .env with SECRET_KEY, DEBUG=True, MEDIA_ROOT etc.
-- python est_prj/manage.py createsuperuser
-- python est_prj/manage.py migrate
-- python est_prj/manage.py runserver
+- python manage.py migrate
+- python manage.py createsuperuser
+- python manage.py runserver
 
 
 ##📍 The Process
