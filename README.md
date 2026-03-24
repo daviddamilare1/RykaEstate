@@ -23,12 +23,23 @@
 
 ---
 
+## 🔌 API Endpoints
+
+- GET /api/featured_houses/
+- GET /api/houses/
+- GET /api/featured_apartments/
+- GET /api/apartments/
+- GET /api/categories/
+- GET /api/category_detail/<id>/
+
+
+---
+
+
 ## 🛠 Tech Stack
 - **Backend:** Django (Python)  
 - **Frontend:** Bootstrap + custom HTML/CSS/JS  
 - **Database:** PostgreSQL / SQLite  
-
----
 
 ---
 
