@@ -75,6 +75,9 @@ python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
 
+---
+
+## 📷 Screenshots
 
 ![image alt](https://github.com/daviddamilare1/RykaEstate/blob/2806d4d09204c7b74de27a90719291991cd08a83/127.0.0.1_8000_(Nest%20Hub%20Max)%20(2).png)
 
