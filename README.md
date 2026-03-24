@@ -48,4 +48,4 @@ Not perfect yet, mobile form could look better, no agent approval flow, no fancy
 Still a work in progress, but this taught me more than ten tutorial projects combined.
 
 
-![image alt]()
+![image alt](https://github.com/daviddamilare1/RykaEstate/blob/d461de9d41971667b34cb099500b9e72aa8302fa/a6a4-102-89-75-177.ngrok-free.app_(Nest%20Hub%20Max).png)
