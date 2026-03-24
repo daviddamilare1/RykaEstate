@@ -43,21 +43,6 @@
 
 ---
 
-## ⚡ Setup Instructions
-
-```bash
-git clone https://github.com/daviddamilare1/RykaEstate.git
-cd RykaEstate
-
-python -m venv venv
-venv\Scripts\activate  # Windows
-
-pip install -r requirements.txt
-
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py runserver
-
 
 ## 📍 Development Journey
 
@@ -73,6 +58,22 @@ Handling migrations when changing model constraints
 
 One major challenge was naming uploaded files based on user IDs when using ManyToMany relationships.
 This required saving the instance twice to properly attach file paths.
+
+---
+
+## ⚡ Setup Instructions
+
+git clone https://github.com/daviddamilare1/RykaEstate.git
+cd RykaEstate
+
+python -m venv venv
+venv\Scripts\activate  # Windows
+
+pip install -r requirements.txt
+
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
 
 
 ![image alt](https://github.com/daviddamilare1/RykaEstate/blob/2806d4d09204c7b74de27a90719291991cd08a83/127.0.0.1_8000_(Nest%20Hub%20Max)%20(2).png)
