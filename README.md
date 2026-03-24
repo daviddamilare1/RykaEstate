@@ -75,7 +75,7 @@ One major challenge was naming uploaded files based on user IDs when using ManyT
 This required saving the instance twice to properly attach file paths.
 
 
-![image alt](https://github.com/daviddamilare1/RykaEstate/blob/dd2354e560bce2d85a6d608608849eec06b1ce21/fullscreen%20screenshot)
+![image alt](https://github.com/daviddamilare1/RykaEstate/blob/2806d4d09204c7b74de27a90719291991cd08a83/127.0.0.1_8000_(Nest%20Hub%20Max)%20(2).png)
 
 
 ![image alt](https://github.com/daviddamilare1/RykaEstate/blob/2bbe1796d53a60f9580e900cbf1470e1c03a6c98/127.0.0.1_8000_apartments(Nest%20Hub%20Max).png)
