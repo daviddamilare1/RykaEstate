@@ -55,3 +55,6 @@ Still a work in progress, but this taught me more than ten tutorial projects com
 
 
 ![image alt](https://github.com/daviddamilare1/RykaEstate/blob/ca49b2b98c7b6c84ee20bd2a86617251cdc43739/127.0.0.1_8000_apt_details_apt_5l2v3j5_aid_31odl_(Nest%20Hub%20Max)%20(2).png)
+
+
+![image alt](https://github.com/daviddamilare1/RykaEstate/blob/9ca007a01918a2bb6c45c78d6fda48f1a04f54b0/screencapture-127-0-0-1-8000-agents-agents-2026-03-21-08_32_30.png)
