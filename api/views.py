@@ -78,3 +78,10 @@ def category_detail(request, slug):
     serializer = CategoryDetailSerializer(categories)
     return Response(serializer.data, status=200)
 
+
+
+
+
+
+
+

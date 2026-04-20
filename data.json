@@ -1,0 +1,2312 @@
+[
+{
+  "model": "core.categories",
+  "pk": 1,
+  "fields": {
+    "title": "Modern Houses",
+    "image": "images/property-exterior-3.webp",
+    "slug": "modern-houses"
+  }
+},
+{
+  "model": "core.categories",
+  "pk": 2,
+  "fields": {
+    "title": "Apartments",
+    "image": "images/Bu_Bursa__Evinde_İskandinav_Ruhu_Modern_Esintilerle_Harmanlanmış___Ev_Gezmesi.jpg",
+    "slug": "apartments-aiv3"
+  }
+},
+{
+  "model": "core.categories",
+  "pk": 3,
+  "fields": {
+    "title": "Condos",
+    "image": "images/download_2.jpg",
+    "slug": "condos-abge"
+  }
+},
+{
+  "model": "core.house",
+  "pk": 2,
+  "fields": {
+    "agent": 7,
+    "name": "Garden Home Near Downtown",
+    "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit minus, exercitationem dolorem nulla quae in pariatur? Labore aspernatur, libero vitae delectus blanditiis autem nemo ullam non totam eligendi facere pariatur dignissimos aperiam reprehenderit eos fugit, iure, facilis eum accusantium corporis vel quis? Explicabo perspiciatis porro veniam eius dicta! Molestiae maiores reprehenderit ipsum delectus consectetur esse architecto reiciendis quos facere, cum, quasi possimus vel, eos assumenda ipsam corporis aliquid distinctio. Quaerat incidunt asperiores cupiditate aliquid ex? Optio, facere tenetur. Ad nisi in harum nulla modi corrupti? Quaerat aut labore officiis perspiciatis dignissi",
+    "address": "14B Saint Louis Street",
+    "image": "house_gallery/download_3.jpg",
+    "bedrooms": 5,
+    "bathrooms": 7,
+    "garage": 2,
+    "category": 1,
+    "state": "Oyo",
+    "city": "Ibadan",
+    "price": "1300000.00",
+    "sq_ft": "1715.00",
+    "acres": "0.30",
+    "featured": false,
+    "year_build": 2024,
+    "date": "2025-08-25T17:59:03.280Z",
+    "slug": "garden-home-near-downtown",
+    "status": "live",
+    "hid": "hid_eq0hlfr",
+    "is_sold": false,
+    "neigbourhood_info": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit minus, exercitationem dolorem nulla quae in pariatur? Labore aspernatur, libero vitae delectus blanditiis autem nemo ullam non totam eligendi facere pariatur dignissimos aperiam reprehender",
+    "h_type": null
+  }
+},
+{
+  "model": "core.house",
+  "pk": 3,
+  "fields": {
+    "agent": 9,
+    "name": "Lagos Retreat",
+    "desc": "Luxury residence",
+    "address": "123 Ikeja Road",
+    "image": "house_gallery/Breathtaking_new_Hamptons_style_house_in_Melbournes_south_east.jpeg",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "garage": null,
+    "category": 1,
+    "state": "Lagos",
+    "city": "Ikeja",
+    "price": "1000000.00",
+    "sq_ft": "2000.00",
+    "acres": "2.00",
+    "featured": false,
+    "year_build": 2020,
+    "date": "2025-09-09T20:53:18.877Z",
+    "slug": "lagos-retreat-3fpg",
+    "status": "live",
+    "hid": "hid_e4bewk7",
+    "is_sold": false,
+    "neigbourhood_info": "",
+    "h_type": null
+  }
+},
+{
+  "model": "core.house",
+  "pk": 4,
+  "fields": {
+    "agent": 10,
+    "name": "Lagos Haven",
+    "desc": "Modern home with scenic views",
+    "address": "78 Lagos Avenue",
+    "image": "house_gallery/Piscine_enterrée.jpeg",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "garage": 1,
+    "category": 1,
+    "state": "Oyo",
+    "city": "Ibadan",
+    "price": "3500000.00",
+    "sq_ft": "2000.00",
+    "acres": "2.00",
+    "featured": true,
+    "year_build": 2020,
+    "date": "2025-09-09T20:53:18.896Z",
+    "slug": "abuja-haven-xgfy",
+    "status": "live",
+    "hid": "hid_azb7q32",
+    "is_sold": false,
+    "neigbourhood_info": "",
+    "h_type": null
+  }
+},
+{
+  "model": "core.house",
+  "pk": 8,
+  "fields": {
+    "agent": 1,
+    "name": "Coastal Bungalow",
+    "desc": "Luxury residence",
+    "address": "78 Abuja Avenue",
+    "image": "house_gallery/download_4.jpeg",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "garage": null,
+    "category": 1,
+    "state": "Lagos",
+    "city": "Ikeja",
+    "price": "918000.00",
+    "sq_ft": "2000.00",
+    "acres": "2.00",
+    "featured": false,
+    "year_build": 2020,
+    "date": "2025-09-09T20:53:18.950Z",
+    "slug": "coastal-bungalow-vaxs",
+    "status": "live",
+    "hid": "hid_fieqssb",
+    "is_sold": true,
+    "neigbourhood_info": "",
+    "h_type": null
+  }
+},
+{
+  "model": "core.house",
+  "pk": 10,
+  "fields": {
+    "agent": 6,
+    "name": "Abia Haven",
+    "desc": "Modern home with scenic views",
+    "address": "45 Lagos Street",
+    "image": "house_gallery/download_6.jpeg",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "garage": null,
+    "category": 1,
+    "state": "Abia",
+    "city": "Umuahia",
+    "price": "2080000.00",
+    "sq_ft": "2000.00",
+    "acres": "2.00",
+    "featured": true,
+    "year_build": 2020,
+    "date": "2025-09-09T20:53:18.976Z",
+    "slug": "abuja-haven-8l99",
+    "status": "live",
+    "hid": "hid_98yac1z",
+    "is_sold": false,
+    "neigbourhood_info": "",
+    "h_type": null
+  }
+},
+{
+  "model": "core.house",
+  "pk": 12,
+  "fields": {
+    "agent": 1,
+    "name": "Maverick Mansion",
+    "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero rerum autem aspernatur nisi quia nam laudantium voluptatibus, magni adipisci hic eum sapiente magnam ut, alias deserunt voluptas labore? Magni soluta debitis commodi fuga aliquid quae. Voluptas voluptates corporis nam est deleniti iure enim, dicta atque. Voluptatem odit assumenda, officia quos mollitia sed consequatur optio doloribus non! Deleniti sunt tempore facilis eligendi recusandae, harum accusantium est nihil ratione natus eum consectetur enim quo ducimus sint reprehenderit voluptatum similique quaerat culpa nulla! Totam quod temporibus soluta hic tempore odit corrupti fuga tenetur officia eligendi dicta expedita digniss",
+    "address": "No.35 Odota, Tanke",
+    "image": "house_gallery/download_11.jpeg",
+    "bedrooms": 8,
+    "bathrooms": 10,
+    "garage": 2,
+    "category": 1,
+    "state": "Kwara",
+    "city": "Ilorin",
+    "price": "5000000.00",
+    "sq_ft": "1700.00",
+    "acres": "7.00",
+    "featured": true,
+    "year_build": 2024,
+    "date": "2025-09-26T18:20:57.082Z",
+    "slug": "maverick-mansion-n6rp",
+    "status": "live",
+    "hid": "hid_8shk84i",
+    "is_sold": false,
+    "neigbourhood_info": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero rerum autem aspernatur nisi quia nam laudantium voluptatibus, magni adipisci hic eum sapiente magnam ut, alias deserunt voluptas labore? Magni soluta debitis commodi fuga aliquid quae. Volup",
+    "h_type": null
+  }
+},
+{
+  "model": "core.housegallery",
+  "pk": 5,
+  "fields": {
+    "house": 3,
+    "image": "house_gallery/download_3.jpeg",
+    "hgid": "hgid_4n3dpup"
+  }
+},
+{
+  "model": "core.housegallery",
+  "pk": 10,
+  "fields": {
+    "house": 12,
+    "image": "house_gallery/49_Modern_Black_and_White_Living_Room_Design_and_Decor_Ideas_oH7Gpp6.jpeg",
+    "hgid": "hgid_93se4ol"
+  }
+},
+{
+  "model": "core.housegallery",
+  "pk": 11,
+  "fields": {
+    "house": 12,
+    "image": "house_gallery/download_9_EmFRqxK.jpeg",
+    "hgid": "hgid_29zslgx"
+  }
+},
+{
+  "model": "core.housegallery",
+  "pk": 12,
+  "fields": {
+    "house": 12,
+    "image": "house_gallery/Large_modern_white_and_dark_brown_kitchen_with_huge_modern_island_with_br_ZXjcLWD.jpeg",
+    "hgid": "hgid_gjw48l6"
+  }
+},
+{
+  "model": "core.housegallery",
+  "pk": 13,
+  "fields": {
+    "house": 12,
+    "image": "house_gallery/download_8_g67v4kz.jpeg",
+    "hgid": "hgid_iv3ngzv"
+  }
+},
+{
+  "model": "core.interiorfeatures",
+  "pk": 5,
+  "fields": {
+    "house": 2,
+    "name": "Pool Tbale"
+  }
+},
+{
+  "model": "core.interiorfeatures",
+  "pk": 6,
+  "fields": {
+    "house": 2,
+    "name": "Air Condition"
+  }
+},
+{
+  "model": "core.interiorfeatures",
+  "pk": 7,
+  "fields": {
+    "house": 2,
+    "name": "Movie theatre"
+  }
+},
+{
+  "model": "core.interiorfeatures",
+  "pk": 13,
+  "fields": {
+    "house": 12,
+    "name": "Home Theatre"
+  }
+},
+{
+  "model": "core.interiorfeatures",
+  "pk": 14,
+  "fields": {
+    "house": 12,
+    "name": "Fire Place"
+  }
+},
+{
+  "model": "core.interiorfeatures",
+  "pk": 15,
+  "fields": {
+    "house": 12,
+    "name": "Library"
+  }
+},
+{
+  "model": "core.interiorfeatures",
+  "pk": 16,
+  "fields": {
+    "house": 12,
+    "name": "Private Spas"
+  }
+},
+{
+  "model": "core.interiorfeatures",
+  "pk": 17,
+  "fields": {
+    "house": 12,
+    "name": "Entrance Hall"
+  }
+},
+{
+  "model": "core.exteriorfeatures",
+  "pk": 5,
+  "fields": {
+    "house": 2,
+    "name": "Swiiming Pool"
+  }
+},
+{
+  "model": "core.exteriorfeatures",
+  "pk": 6,
+  "fields": {
+    "house": 2,
+    "name": "Garden"
+  }
+},
+{
+  "model": "core.exteriorfeatures",
+  "pk": 7,
+  "fields": {
+    "house": 2,
+    "name": "Badmitton Court"
+  }
+},
+{
+  "model": "core.exteriorfeatures",
+  "pk": 13,
+  "fields": {
+    "house": 12,
+    "name": "Outdoor Kitchen"
+  }
+},
+{
+  "model": "core.exteriorfeatures",
+  "pk": 14,
+  "fields": {
+    "house": 12,
+    "name": "patios"
+  }
+},
+{
+  "model": "core.exteriorfeatures",
+  "pk": 15,
+  "fields": {
+    "house": 12,
+    "name": "balconies"
+  }
+},
+{
+  "model": "core.exteriorfeatures",
+  "pk": 16,
+  "fields": {
+    "house": 12,
+    "name": "Swimming Pool"
+  }
+},
+{
+  "model": "core.exteriorfeatures",
+  "pk": 17,
+  "fields": {
+    "house": 12,
+    "name": "Sport Courts"
+  }
+},
+{
+  "model": "core.apartment",
+  "pk": 1,
+  "fields": {
+    "agent": 1,
+    "name": "3 Bedrrom Apartment, Lagos",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi incidunt voluptatem consequuntur, repellat cumque hic voluptates dolor recusandae explicabo aut at possimus enim pariatur aspernatur id quis nihil amet eligendi ipsa molestias culpa. Consectetur neque cum impedit provident deserunt, dicta earum voluptatem sed tenetur porro ab minus consequatur rem doloribus obcaecati! Quae nulla repudiandae totam voluptatum commodi harum aliquid eum aut facilis optio deserunt sequi nobis qui, quibusdam sit! Ipsam architecto ex tenetur maxime impedit ipsum nisi nulla repellat vero mollitia facilis commodi alias inventore, explicabo cumque assumenda ea reprehenderit odio accusamus fugit sint dolor",
+    "address": "24c Victoria Island, Emarald Street",
+    "image": "apartment_gallery/HAB_Apartment_Building_-_NM_ARCHITECTS.jpg",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "garage": null,
+    "category": 2,
+    "state": "Lagos",
+    "city": "Ikeja",
+    "price": "300.00",
+    "sq_ft": "700.00",
+    "acres": "0.05",
+    "featured": true,
+    "year_build": 2025,
+    "date": "2025-08-26T03:13:16.425Z",
+    "slug": "3-bedrrom-apartment-lagos",
+    "status": "live",
+    "apt_id": "apt_5l2v3j5",
+    "is_available": true,
+    "neigbourhood_info": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi incidunt voluptatem consequuntur, repellat cumque hic voluptates dolor recusandae explicabo aut at possimus enim pariatur aspernatur id quis nihil amet eligendi ipsa molestias culpa. Consecte",
+    "a_type": null
+  }
+},
+{
+  "model": "core.apartment",
+  "pk": 2,
+  "fields": {
+    "agent": 6,
+    "name": "Urban Harmony",
+    "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta ad, consequuntur iste laudantium cum nesciunt, illo ducimus suscipit totam id magnam quam adipisci, illum quidem repudiandae ipsa? Temporibus quibusdam omnis cumque non vero perspiciatis at architecto excepturi, dolores repellat. Quidem sapiente obcaecati explicabo dolorem magni illum aliquam neque repellat tenetur consectetur velit vel eligendi a quod quas, nulla esse in nam numquam. Inventore voluptate consequuntur consequatur ipsa mollitia velit ipsum ea facilis consectetur, minus tempora quam, est expedita ab? Odit veniam exercitationem eaque dolorum illo qui cumque iste. Sed ad iure pariatur libero quis, cum quas eius quos",
+    "address": "Adewole, Mina Road",
+    "image": "apartment_gallery/Contemporary-Modern_Home___SDeG.jpeg",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "garage": null,
+    "category": 2,
+    "state": "Plateau",
+    "city": "Jos",
+    "price": "400.00",
+    "sq_ft": "99999.00",
+    "acres": "9999.00",
+    "featured": true,
+    "year_build": 2025,
+    "date": "2025-09-12T15:21:43.821Z",
+    "slug": "urban-harmony",
+    "status": "live",
+    "apt_id": "apt_84cdlsp",
+    "is_available": true,
+    "neigbourhood_info": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta ad, consequuntur iste laudantium cum nesciunt, illo ducimus suscipit totam id magnam quam adipisci, illum quidem repudiandae ipsa? Temporibus quibusdam omnis cumque non vero perspiciatis at a",
+    "a_type": null
+  }
+},
+{
+  "model": "core.apartment",
+  "pk": 3,
+  "fields": {
+    "agent": 8,
+    "name": "Verve Vertica",
+    "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta ad, consequuntur iste laudantium cum nesciunt, illo ducimus suscipit totam id magnam quam adipisci, illum quidem repudiandae ipsa? Temporibus quibusdam omnis cumque non vero perspiciatis at architecto excepturi, dolores repellat. Quidem sapiente obcaecati explicabo dolorem magni illum aliquam neque repellat tenetur consectetur velit vel eligendi a quod quas, nulla esse in nam numquam. Inventore voluptate consequuntur consequatur ipsa mollitia velit ipsum ea facilis consectetur, minus tempora quam, est expedita ab? Odit veniam exercitationem eaque dolorum illo qui cumque iste. Sed ad iure pariatur libero quis, cum quas eius quos",
+    "address": "Eti-osa, emerald street No. 41",
+    "image": "apartment_gallery/download_7.jpeg",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "garage": null,
+    "category": 2,
+    "state": "Oyo",
+    "city": "Ibadan",
+    "price": "500.00",
+    "sq_ft": "999.00",
+    "acres": "99.00",
+    "featured": true,
+    "year_build": 2025,
+    "date": "2025-09-12T15:43:29.103Z",
+    "slug": "verve-vertica",
+    "status": "live",
+    "apt_id": "apt_j3g8ild",
+    "is_available": true,
+    "neigbourhood_info": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta ad, consequuntur iste laudantium cum nesciunt, illo ducimus suscipit totam id magnam quam adipisci, illum quidem repudiandae ipsa? Temporibus quibusdam omnis cumque non vero perspiciatis at a",
+    "a_type": null
+  }
+},
+{
+  "model": "core.apartment",
+  "pk": 4,
+  "fields": {
+    "agent": 9,
+    "name": "The Chromatic",
+    "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste optio voluptates nostrum recusandae velit? Magnam porro in sunt facere aliquid non! Perferendis accusantium, ipsum dolores praesentium quibusdam minima possimus consequatur et, ad quia nostrum doloribus ab ut ipsa repellat culpa expedita qui exercitationem omnis labore! Eum laborum laboriosam et odio quasi atque non, ipsam accusantium mollitia nisi eos quas inventore cumque magni perspiciatis doloremque amet! Modi necessitatibus ea velit perferendis nisi aspernatur repudiandae, nesciunt quis voluptatem optio voluptatum dolore quae tempora neque? Ratione adipisci voluptas dolor? Ab perferendis dignissimos sed laborum, debitis aute",
+    "address": "No.13 Obafemi-Awolowo Street",
+    "image": "apartment_gallery/Tecno_Haus__Edificio_de_Viviendas_Maiorca_-_Lourenço___Sarmento.jpeg",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "garage": 1,
+    "category": 2,
+    "state": "Kwara",
+    "city": "Ilorin",
+    "price": "250.00",
+    "sq_ft": "999.00",
+    "acres": "999.00",
+    "featured": false,
+    "year_build": 2025,
+    "date": "2025-09-12T16:00:33.196Z",
+    "slug": "the-chromatic",
+    "status": "live",
+    "apt_id": "apt_48snfu3",
+    "is_available": true,
+    "neigbourhood_info": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste optio voluptates nostrum recusandae velit? Magnam porro in sunt facere aliquid non! Perferendis accusantium, ipsum dolores praesentium quibusdam minima possimus consequatur et, ad quia nostrum",
+    "a_type": null
+  }
+},
+{
+  "model": "core.apartment",
+  "pk": 5,
+  "fields": {
+    "agent": 1,
+    "name": "Zenith Towers",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur ex sit eum iste veniam reiciendis molestias hic quisquam laboriosam! Aliquid ea sequi ipsa enim ab voluptates, officia dicta sapiente perferendis eaque delectus? Eligendi dolor, iusto doloremque in facere id corrupti obcaecati neque, minus reprehenderit alias, sed nostrum placeat delectus! Architecto tempora explicabo eum hic! Corporis quam atque possimus aperiam. Deleniti adipisci, pariatur optio maxime sed commodi necessitatibus cupiditate praesentium quas laborum illo voluptatibus perspiciatis laudantium rerum nobis, hic reiciendis? Sed deserunt perferendis reiciendis sit neque architecto qui ea! Distinctio, eius magnam.",
+    "address": "No.52 Orchid street",
+    "image": "apartment_gallery/Everything_You_Need_to_Know_About_E-levy_Tax_-_The_Greens_GH.jpeg",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "garage": 1,
+    "category": 2,
+    "state": "Lagos",
+    "city": "Ikeja",
+    "price": "150.00",
+    "sq_ft": "999.00",
+    "acres": "99.00",
+    "featured": false,
+    "year_build": 2024,
+    "date": "2025-09-16T16:55:59.362Z",
+    "slug": "zenith-towers",
+    "status": "live",
+    "apt_id": "apt_6emrzk0",
+    "is_available": true,
+    "neigbourhood_info": "",
+    "a_type": null
+  }
+},
+{
+  "model": "core.apartment",
+  "pk": 11,
+  "fields": {
+    "agent": 1,
+    "name": "The Eccentric Estates",
+    "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas eaque labore vel ducimus obcaecati magnam minus neque tempore quasi fugiat quod debitis non nostrum totam consectetur quaerat, earum eum! Aspernatur qui dolorem, mollitia iure corrupti eos laudantium possimus, maxime provident, cum autem pariatur officia? Eius, animi voluptate libero tempora iusto beatae perferendis quis tempore rem maxime officiis cupiditate, error nam veritatis, sequi minima? Soluta non similique omnis fugiat eligendi error a minus possimus molestias molestiae nisi consequatur totam, sit odit esse. Quod incidunt facere, eum itaque distinctio quasi alias veniam, deleniti inventore maxime, minima officiis vit",
+    "address": "No.35 Adewole Mina Road",
+    "image": "apartment_gallery/Gambill_Forest_iE781Qr.jpeg",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "garage": null,
+    "category": 2,
+    "state": "Kwara",
+    "city": "Ilorin",
+    "price": "80.00",
+    "sq_ft": null,
+    "acres": null,
+    "featured": false,
+    "year_build": 2024,
+    "date": "2025-09-26T16:01:15.843Z",
+    "slug": "the-eccentric-estates-zzpr",
+    "status": "live",
+    "apt_id": "apt_525806n",
+    "is_available": true,
+    "neigbourhood_info": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas eaque labore vel ducimus obcaecati magnam minus neque tempore quasi fugiat quod debitis non nostrum totam consectetur quaerat, earum eum! Aspernatur qui dolorem, mollitia iure corrupti eos",
+    "a_type": null
+  }
+},
+{
+  "model": "core.apartmentgallery",
+  "pk": 1,
+  "fields": {
+    "apartment": 1,
+    "image": "apartment_gallery/download_5.jpg",
+    "agid": "agid_bmf4qbj"
+  }
+},
+{
+  "model": "core.apartmentgallery",
+  "pk": 2,
+  "fields": {
+    "apartment": 1,
+    "image": "apartment_gallery/download_8.jpg",
+    "agid": "agid_2vqdbho"
+  }
+},
+{
+  "model": "core.apartmentgallery",
+  "pk": 3,
+  "fields": {
+    "apartment": 1,
+    "image": "apartment_gallery/Discover_cozy_neutral_bedroom_decor_ideas_with_a.jpg",
+    "agid": "agid_c4s6yuf"
+  }
+},
+{
+  "model": "core.apartmentgallery",
+  "pk": 4,
+  "fields": {
+    "apartment": 1,
+    "image": "apartment_gallery/75_Modern_Bathroom_Ideas_Youll_Love_-_August_2025.jpg",
+    "agid": "agid_jammpe2"
+  }
+},
+{
+  "model": "core.apartmentgallery",
+  "pk": 5,
+  "fields": {
+    "apartment": 4,
+    "image": "apartment_gallery/download_5_gO20TYU.jpg",
+    "agid": "agid_h6q0giu"
+  }
+},
+{
+  "model": "core.apartmentgallery",
+  "pk": 6,
+  "fields": {
+    "apartment": 4,
+    "image": "apartment_gallery/Siyah_ve_Beyazın_Ayrılmadığı_Bu_Mutfak_Hem_Şık_Hem_Fonksiyonel.jpg",
+    "agid": "agid_b9s4ue1"
+  }
+},
+{
+  "model": "core.apartmentgallery",
+  "pk": 7,
+  "fields": {
+    "apartment": 4,
+    "image": "apartment_gallery/Black_and_White_Bedroom_Decor.jpg",
+    "agid": "agid_b85o549"
+  }
+},
+{
+  "model": "core.apartmentgallery",
+  "pk": 29,
+  "fields": {
+    "apartment": 11,
+    "image": "apartment_gallery/Home_Renovation_Design_Inspiration_h6Juf0x.jpeg",
+    "agid": "agid_9zxae6p"
+  }
+},
+{
+  "model": "core.apartmentgallery",
+  "pk": 30,
+  "fields": {
+    "apartment": 11,
+    "image": "apartment_gallery/5a56d393-90a5-4c1d-a4d3-a9ec272833fc_k7NL8o2.jpeg",
+    "agid": "agid_hf34qh0"
+  }
+},
+{
+  "model": "core.apartmentgallery",
+  "pk": 31,
+  "fields": {
+    "apartment": 11,
+    "image": "apartment_gallery/1130b8bd-b396-4d3c-b845-249c8e18d1f4_APIP3pR.jpeg",
+    "agid": "agid_dbrnkcu"
+  }
+},
+{
+  "model": "core.apartmentgallery",
+  "pk": 32,
+  "fields": {
+    "apartment": 11,
+    "image": "apartment_gallery/813bb88d-3132-4ec0-a7f3-1f5868bc0d31_dMf8S5d.jpeg",
+    "agid": "agid_j5wqz52"
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 1,
+  "fields": {
+    "name": "Air Condition",
+    "apartment": 1
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 2,
+  "fields": {
+    "name": "Wardrope",
+    "apartment": 1
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 3,
+  "fields": {
+    "name": "Heaters",
+    "apartment": 1
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 27,
+  "fields": {
+    "name": "Air Condition",
+    "apartment": 11
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 28,
+  "fields": {
+    "name": "PS5",
+    "apartment": 11
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 29,
+  "fields": {
+    "name": "Sound System",
+    "apartment": 11
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 30,
+  "fields": {
+    "name": "Pool Table",
+    "apartment": 1
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 31,
+  "fields": {
+    "name": "Air Condition",
+    "apartment": 5
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 32,
+  "fields": {
+    "name": "Television",
+    "apartment": 5
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 33,
+  "fields": {
+    "name": "Curtains or blinds",
+    "apartment": 5
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 34,
+  "fields": {
+    "name": "Kitchen cabinets",
+    "apartment": 5
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 35,
+  "fields": {
+    "name": "Air Condition",
+    "apartment": 4
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 36,
+  "fields": {
+    "name": "Refrigerator",
+    "apartment": 4
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 37,
+  "fields": {
+    "name": "Sound System",
+    "apartment": 4
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 38,
+  "fields": {
+    "name": "Pool Table",
+    "apartment": 4
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 39,
+  "fields": {
+    "name": "Bathroom fixtures",
+    "apartment": 4
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 40,
+  "fields": {
+    "name": "Bathroom fixtures",
+    "apartment": 3
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 41,
+  "fields": {
+    "name": "Television",
+    "apartment": 3
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 42,
+  "fields": {
+    "name": "Wardrobe",
+    "apartment": 3
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 43,
+  "fields": {
+    "name": "Refrigerator",
+    "apartment": 3
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 44,
+  "fields": {
+    "name": "Air Condition",
+    "apartment": 2
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 45,
+  "fields": {
+    "name": "Television",
+    "apartment": 2
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 46,
+  "fields": {
+    "name": "Sound System",
+    "apartment": 2
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 47,
+  "fields": {
+    "name": "Kitchen cabinets",
+    "apartment": 2
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 48,
+  "fields": {
+    "name": "Bathroom fixtures",
+    "apartment": 2
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 49,
+  "fields": {
+    "name": "Dining table",
+    "apartment": 2
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 50,
+  "fields": {
+    "name": "Bathroom fixtures",
+    "apartment": 1
+  }
+},
+{
+  "model": "core.apartmentinteriorfeatures",
+  "pk": 51,
+  "fields": {
+    "name": "Dining table",
+    "apartment": 1
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 24,
+  "fields": {
+    "name": "Badmitton",
+    "apartment": 11
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 25,
+  "fields": {
+    "name": "Water View",
+    "apartment": 11
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 26,
+  "fields": {
+    "name": "Gym",
+    "apartment": 11
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 27,
+  "fields": {
+    "name": "Stairs or hallway",
+    "apartment": 1
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 28,
+  "fields": {
+    "name": "Balcony",
+    "apartment": 1
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 29,
+  "fields": {
+    "name": "Intercom",
+    "apartment": 1
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 30,
+  "fields": {
+    "name": "Security camera",
+    "apartment": 1
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 31,
+  "fields": {
+    "name": "Fire extinguisher",
+    "apartment": 1
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 32,
+  "fields": {
+    "name": "Stairs or hallway",
+    "apartment": 2
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 33,
+  "fields": {
+    "name": "Balcony",
+    "apartment": 2
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 34,
+  "fields": {
+    "name": "Intercom",
+    "apartment": 2
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 35,
+  "fields": {
+    "name": "Security camera",
+    "apartment": 2
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 36,
+  "fields": {
+    "name": "Stairs or hallway",
+    "apartment": 3
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 37,
+  "fields": {
+    "name": "Water View",
+    "apartment": 3
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 38,
+  "fields": {
+    "name": "Intercom",
+    "apartment": 3
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 39,
+  "fields": {
+    "name": "Balcony",
+    "apartment": 3
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 40,
+  "fields": {
+    "name": "Stairs",
+    "apartment": 4
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 41,
+  "fields": {
+    "name": "Balcony",
+    "apartment": 4
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 42,
+  "fields": {
+    "name": "Gym",
+    "apartment": 4
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 43,
+  "fields": {
+    "name": "Doorbell Cam",
+    "apartment": 5
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 44,
+  "fields": {
+    "name": "Balcony",
+    "apartment": 5
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 45,
+  "fields": {
+    "name": "Outdoor light fixture",
+    "apartment": 5
+  }
+},
+{
+  "model": "core.apartmentexteriorfeatures",
+  "pk": 46,
+  "fields": {
+    "name": "Swimming Pool",
+    "apartment": 1
+  }
+},
+{
+  "model": "core.apartmentrules",
+  "pk": 25,
+  "fields": {
+    "rules": "1 guest maximum",
+    "apartment": 11
+  }
+},
+{
+  "model": "core.apartmentrules",
+  "pk": 26,
+  "fields": {
+    "rules": "No parties or events",
+    "apartment": 11
+  }
+},
+{
+  "model": "core.apartmentrules",
+  "pk": 27,
+  "fields": {
+    "rules": "Checkout before 12am",
+    "apartment": 11
+  }
+},
+{
+  "model": "core.apartmentrules",
+  "pk": 28,
+  "fields": {
+    "rules": "No smoking",
+    "apartment": 11
+  }
+},
+{
+  "model": "core.apartmentsafety",
+  "pk": 22,
+  "fields": {
+    "safety": "Carbon monoxide alarm",
+    "apartment": 11
+  }
+},
+{
+  "model": "core.booking",
+  "pk": 22,
+  "fields": {
+    "user": 6,
+    "payment_status": "Paid",
+    "payment_method": null,
+    "full_name": "Tyler Star",
+    "phone": "08067423042",
+    "email": "davidtherodent@gmail.com",
+    "apartment": 5,
+    "total": "450.00",
+    "check_in_date": "2025-09-17",
+    "check_out_date": "2025-09-20",
+    "total_days": 3,
+    "checked_in": true,
+    "checked_out": true,
+    "is_active": false,
+    "checked_in_tracker": true,
+    "checked_out_tracker": true,
+    "date": "2025-09-17T18:38:05.059Z",
+    "booking_id": "bid_gvb0zob",
+    "success_id": "sid_2052cbf",
+    "stripe_payment_intent": "cs_test_a1AKGSJOuhopIJ26pJylKPEUhFLRORSH2QHjyIXpUw7EExyPyKvy0JEGLY"
+  }
+},
+{
+  "model": "core.booking",
+  "pk": 23,
+  "fields": {
+    "user": 9,
+    "payment_status": "Paid",
+    "payment_method": null,
+    "full_name": "Moses",
+    "phone": "08033837008",
+    "email": "daviddanilare@gmail.com",
+    "apartment": 1,
+    "total": "300.00",
+    "check_in_date": "2025-09-17",
+    "check_out_date": "2025-09-18",
+    "total_days": 1,
+    "checked_in": true,
+    "checked_out": true,
+    "is_active": false,
+    "checked_in_tracker": true,
+    "checked_out_tracker": true,
+    "date": "2025-09-17T18:41:33.106Z",
+    "booking_id": "bid_8rrphmf",
+    "success_id": "sid_761e857",
+    "stripe_payment_intent": "cs_test_a1bh98Rk1qXbWIwURcMieVz9YOfD0sUBTB1Z9aeK9kqsLcS7pTRyfnwVDR"
+  }
+},
+{
+  "model": "core.booking",
+  "pk": 24,
+  "fields": {
+    "user": 6,
+    "payment_status": "Paid",
+    "payment_method": null,
+    "full_name": "Ijagbemi David",
+    "phone": "07039020348",
+    "email": "daviddamilare776@gmail.com",
+    "apartment": 1,
+    "total": "600.00",
+    "check_in_date": "2025-11-04",
+    "check_out_date": "2025-11-13",
+    "total_days": 2,
+    "checked_in": true,
+    "checked_out": true,
+    "is_active": false,
+    "checked_in_tracker": true,
+    "checked_out_tracker": true,
+    "date": "2025-11-02T20:56:48.957Z",
+    "booking_id": "bid_g9kqo1h",
+    "success_id": "sid_2f2a430",
+    "stripe_payment_intent": "cs_test_a1406qE9GKdaEIu2VjUyFuYrr4YFHpqrGqvEhswchdXiq2JSyVCDKrzgGp"
+  }
+},
+{
+  "model": "core.review",
+  "pk": 45,
+  "fields": {
+    "user": 6,
+    "apartment": 1,
+    "review": "Very neat environment",
+    "reply": null,
+    "rating": 4,
+    "active": false,
+    "date": "2025-09-05T19:12:21.077Z"
+  }
+},
+{
+  "model": "core.review",
+  "pk": 46,
+  "fields": {
+    "user": 7,
+    "apartment": 1,
+    "review": "Testing",
+    "reply": "",
+    "rating": 4,
+    "active": false,
+    "date": "2025-09-06T03:00:54.192Z"
+  }
+},
+{
+  "model": "core.review",
+  "pk": 48,
+  "fields": {
+    "user": 9,
+    "apartment": 1,
+    "review": "Very comfy",
+    "reply": null,
+    "rating": 5,
+    "active": false,
+    "date": "2025-09-06T05:39:05.967Z"
+  }
+},
+{
+  "model": "core.review",
+  "pk": 54,
+  "fields": {
+    "user": 9,
+    "apartment": 2,
+    "review": "Great apartment but a terrible environment. The area is too noisy",
+    "reply": null,
+    "rating": 3,
+    "active": true,
+    "date": "2025-09-17T19:11:42.956Z"
+  }
+},
+{
+  "model": "core.review",
+  "pk": 72,
+  "fields": {
+    "user": 9,
+    "apartment": 11,
+    "review": "Great place to stay ",
+    "reply": null,
+    "rating": 4,
+    "active": true,
+    "date": "2025-10-10T00:45:58.852Z"
+  }
+},
+{
+  "model": "core.scheduletour",
+  "pk": 39,
+  "fields": {
+    "user": 1,
+    "agent": null,
+    "house": 8,
+    "full_name": "Moses",
+    "email": "daviddanilare@gmail.com",
+    "phone": "+2348067423042",
+    "type": "Make an Inquiry",
+    "message": "I want to some information on this property, I'm interested in buying it",
+    "date": "2025-10-05T13:28:19.755Z"
+  }
+},
+{
+  "model": "core.scheduletour",
+  "pk": 40,
+  "fields": {
+    "user": 1,
+    "agent": null,
+    "house": 12,
+    "full_name": "Tyler Star",
+    "email": "davidtherodent@gmail.com",
+    "phone": "+2348067423042",
+    "type": "Request a Tour",
+    "message": "I would like a tour for this property",
+    "date": "2025-10-05T13:43:19.133Z"
+  }
+},
+{
+  "model": "core.scheduletour",
+  "pk": 41,
+  "fields": {
+    "user": 1,
+    "agent": 1,
+    "house": null,
+    "full_name": "Tyler Star",
+    "email": "davidtherodent@gmail.com",
+    "phone": "+2348067423042",
+    "type": null,
+    "message": "Would like to have a conversation with you. I need a consultation for some of your properties",
+    "date": "2025-10-05T14:17:13.856Z"
+  }
+},
+{
+  "model": "core.scheduletour",
+  "pk": 42,
+  "fields": {
+    "user": 1,
+    "agent": null,
+    "house": 4,
+    "full_name": "Tyler Star",
+    "email": "davidtherodent@gmail.com",
+    "phone": "+2348067423042",
+    "type": "Request a Tour",
+    "message": "I would like a tour of the house",
+    "date": "2025-11-02T20:54:03.455Z"
+  }
+},
+{
+  "model": "agents.agent",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "full_name": "David Damilare",
+    "image": "agent_images/person-m-11.webp",
+    "cover_img": "agent_cover_images/slide-2.jpg",
+    "email": "daviddamilare776@gmail.com",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quam nihil atque pariatur nulla explicabo iste quas fugiat similique, dolor magnam deserunt ducimus illum ab numquam porro ratione nostrum. Doloremque.",
+    "phone": "07039020348",
+    "country": "Nigeria",
+    "state": "Kwara State",
+    "city": "Ilorin",
+    "mission": "My mission is to transform property transactions into seamless experiences that exceed expectations.",
+    "office_name": "MAX Affiliates",
+    "office_address": "671 ROSA AVE STE 100, METAIRIE, LA, 70005-2830",
+    "twitter": "https://x.com/Man_Kagae",
+    "instagram": "https://www.instagram.com/dfw__cid?igsh=MWkzcDIweDc0ZTF3dg%3D%3D&utm_source=qr",
+    "facebook": null,
+    "whatsapp": "https://wa.me/2349038241642",
+    "identity_type": "National Identification number",
+    "identity_image": "agents_1/1.stud.jpg",
+    "verified": true,
+    "is_available": true,
+    "min_price": "250000.00",
+    "max_price": "800000.00",
+    "agent_id": "aid_31odl",
+    "agent_type": "Realtor",
+    "date": "2025-08-25T01:07:09.430Z",
+    "years_of_exp": 10
+  }
+},
+{
+  "model": "agents.agent",
+  "pk": 6,
+  "fields": {
+    "user": 10,
+    "full_name": "Emeka Nwachukwu",
+    "image": "agent_images/person-m-7.webp",
+    "cover_img": "agent_cover_images/property-4.jpg",
+    "email": "emeka.nwachukwu517@hotmail.com",
+    "desc": "Experienced Realtor based in Abuja.",
+    "phone": "5558342158",
+    "country": "Nigeria",
+    "state": "Rivers",
+    "city": "Abuja",
+    "mission": "Providing top-notch real estate services",
+    "office_name": "Prime Realty",
+    "office_address": "123 Lagos Street",
+    "twitter": "https://twitter.com/example",
+    "instagram": "https://instagram.com/example",
+    "facebook": null,
+    "whatsapp": "https://wa.me/1234567890",
+    "identity_type": "Driver's License",
+    "identity_image": "agents_10/10.about-1.jpg",
+    "verified": true,
+    "is_available": true,
+    "min_price": "125554.00",
+    "max_price": "593729.00",
+    "agent_id": "aid_babkg",
+    "agent_type": "Property Owner",
+    "date": "2025-09-09T16:55:34.710Z",
+    "years_of_exp": 7
+  }
+},
+{
+  "model": "agents.agent",
+  "pk": 7,
+  "fields": {
+    "user": 11,
+    "full_name": "Amaka Eze",
+    "image": "agent_images/person-f-14.webp",
+    "cover_img": "agent_cover_images/property-exterior-7.webp",
+    "email": "amaka.eze779@yahoo.com",
+    "desc": "Experienced Property Owner based in Port Harcourt.",
+    "phone": "5553463534",
+    "country": "UK",
+    "state": "Lagos",
+    "city": "Abuja",
+    "mission": "Helping clients find their dream homes",
+    "office_name": "Elite Properties",
+    "office_address": "123 Abuja Street",
+    "twitter": null,
+    "instagram": "https://instagram.com/example",
+    "facebook": "https://facebook.com/example",
+    "whatsapp": null,
+    "identity_type": "Driver's License",
+    "identity_image": "agents_11/11.about-1.jpg",
+    "verified": true,
+    "is_available": true,
+    "min_price": "192814.00",
+    "max_price": "597467.00",
+    "agent_id": "aid_elokk",
+    "agent_type": "Property Owner",
+    "date": "2025-09-09T16:55:34.724Z",
+    "years_of_exp": 2
+  }
+},
+{
+  "model": "agents.agent",
+  "pk": 8,
+  "fields": {
+    "user": 12,
+    "full_name": "Amaka Ogunleye",
+    "image": "agent_images/person-f-7.webp",
+    "cover_img": "agent_cover_images/property-exterior-9.webp",
+    "email": "amaka.ogunleye350@gmail.com",
+    "desc": "Experienced Realtor based in Lagos.",
+    "phone": "5555276673",
+    "country": "UK",
+    "state": "Lagos",
+    "city": "Port Harcourt",
+    "mission": null,
+    "office_name": "Prime Realty",
+    "office_address": null,
+    "twitter": "https://twitter.com/example",
+    "instagram": "https://instagram.com/example",
+    "facebook": null,
+    "whatsapp": null,
+    "identity_type": "International Passport",
+    "identity_image": "agents_12/12.about-1.jpg",
+    "verified": true,
+    "is_available": true,
+    "min_price": "402013.00",
+    "max_price": "545072.00",
+    "agent_id": "aid_2k1ng",
+    "agent_type": "Leasing Agent",
+    "date": "2025-09-09T16:55:34.738Z",
+    "years_of_exp": 15
+  }
+},
+{
+  "model": "agents.agent",
+  "pk": 9,
+  "fields": {
+    "user": 13,
+    "full_name": "Emeka Obi",
+    "image": "agent_images/agent-3.jpg",
+    "cover_img": "agent_cover_images/post-5.jpg",
+    "email": "emeka.obi991@hotmail.com",
+    "desc": "Experienced Leasing Agent based in Port Harcourt.",
+    "phone": "5559431575",
+    "country": "USA",
+    "state": "Abuja",
+    "city": "Lagos",
+    "mission": null,
+    "office_name": "Elite Properties",
+    "office_address": "123 Lagos Street",
+    "twitter": null,
+    "instagram": null,
+    "facebook": null,
+    "whatsapp": null,
+    "identity_type": "National Identification number",
+    "identity_image": "id.jpg",
+    "verified": true,
+    "is_available": true,
+    "min_price": "200647.00",
+    "max_price": "777650.00",
+    "agent_id": "aid_lak5o",
+    "agent_type": "Property Manager",
+    "date": "2025-09-09T16:55:34.753Z",
+    "years_of_exp": 17
+  }
+},
+{
+  "model": "agents.agent",
+  "pk": 10,
+  "fields": {
+    "user": 14,
+    "full_name": "Ngozi Okeke",
+    "image": "agent_images/agent-4.jpg",
+    "cover_img": "agent_cover.jpg",
+    "email": "ngozi.okeke495@hotmail.com",
+    "desc": "Experienced Property Manager based in Abuja.",
+    "phone": "5556316815",
+    "country": "UK",
+    "state": "Lagos",
+    "city": "Port Harcourt",
+    "mission": "Providing top-notch real estate services",
+    "office_name": "Prime Realty",
+    "office_address": null,
+    "twitter": "https://twitter.com/example",
+    "instagram": null,
+    "facebook": "https://facebook.com/example",
+    "whatsapp": null,
+    "identity_type": "Driver's License",
+    "identity_image": "agents_14/14.about-1.jpg",
+    "verified": true,
+    "is_available": true,
+    "min_price": "221274.00",
+    "max_price": "829655.00",
+    "agent_id": "aid_bjk41",
+    "agent_type": "Property Manager",
+    "date": "2025-09-09T16:55:34.767Z",
+    "years_of_exp": 13
+  }
+},
+{
+  "model": "agents.agentspecialization",
+  "pk": 1,
+  "fields": {
+    "agent": 1,
+    "title": "Lakefront Residential Properties",
+    "about": "Lorem ipsum, dolor sit amet consectetur"
+  }
+},
+{
+  "model": "agents.agentspecialization",
+  "pk": 2,
+  "fields": {
+    "agent": 1,
+    "title": "Investment Properties",
+    "about": "Commercial and rental opportunities"
+  }
+},
+{
+  "model": "agents.agentspecialization",
+  "pk": 3,
+  "fields": {
+    "agent": 1,
+    "title": "Surburban Communities",
+    "about": "Family homes and neighborhoods"
+  }
+},
+{
+  "model": "agents.agentspecialization",
+  "pk": 4,
+  "fields": {
+    "agent": null,
+    "title": "Excepteur eum rerum adipisci illo et dolor enim repellendus Eligendi voluptas voluptas expedita qui",
+    "about": "Nobis quod quibusdam ullamco debitis aut expedita cumque aspernatur esse eos ex vel et eveniet qui"
+  }
+},
+{
+  "model": "agents.agentspecialization",
+  "pk": 5,
+  "fields": {
+    "agent": null,
+    "title": "Nobis in sed laboriosam eum maxime voluptatibus veniam quas sint qui quisquam delectus consequatu",
+    "about": "Officiis hic tempor sit sunt quidem aliquid irure dolorem nesciunt amet numquam voluptatem"
+  }
+},
+{
+  "model": "agents.agentspecialization",
+  "pk": 6,
+  "fields": {
+    "agent": null,
+    "title": "Rerum aliquid officia omnis esse velit voluptas et rem",
+    "about": "Omnis ratione eaque illum fugiat"
+  }
+},
+{
+  "model": "agents.agentspecialization",
+  "pk": 7,
+  "fields": {
+    "agent": null,
+    "title": "Harum quis culpa labore voluptatibus aut aspernatur quis at ut molestias iusto consequatur Voluptat",
+    "about": "Deleniti consequuntur voluptates quis amet optio laudantium culpa"
+  }
+},
+{
+  "model": "agents.agentspecialization",
+  "pk": 8,
+  "fields": {
+    "agent": null,
+    "title": "Obcaecati distinctio Ex doloremque eius sed qui",
+    "about": "Ipsum nulla optio eos ipsa pariatur Voluptas architecto voluptas mollitia perferendis iste commo"
+  }
+},
+{
+  "model": "agents.agentspecialization",
+  "pk": 9,
+  "fields": {
+    "agent": null,
+    "title": "Aut cupiditate reprehenderit cum itaque ullamco eius et a tempora id pariatur Dolorem proident a",
+    "about": "Quia cumque dolores reiciendis vitae est est ea excepturi beatae eum est reprehenderit corporis"
+  }
+},
+{
+  "model": "agents.agentspecialization",
+  "pk": 10,
+  "fields": {
+    "agent": null,
+    "title": null,
+    "about": ""
+  }
+},
+{
+  "model": "agents.agentspecialization",
+  "pk": 11,
+  "fields": {
+    "agent": null,
+    "title": null,
+    "about": ""
+  }
+},
+{
+  "model": "agents.agentreview",
+  "pk": 4,
+  "fields": {
+    "user": 7,
+    "agent": 1,
+    "review": "Very reliable and gives good advice on properties to buy",
+    "reply": "",
+    "rating": 5,
+    "active": false,
+    "date": "2025-09-06T04:06:38.816Z"
+  }
+},
+{
+  "model": "agents.agentreview",
+  "pk": 5,
+  "fields": {
+    "user": 8,
+    "agent": 1,
+    "review": "Great communication skills",
+    "reply": "",
+    "rating": 3,
+    "active": false,
+    "date": "2025-09-06T04:08:16.610Z"
+  }
+},
+{
+  "model": "agents.agentreview",
+  "pk": 15,
+  "fields": {
+    "user": 9,
+    "agent": 1,
+    "review": "Hands down one of the best agent here",
+    "reply": "",
+    "rating": 4,
+    "active": false,
+    "date": "2025-09-06T05:37:34.304Z"
+  }
+},
+{
+  "model": "agents.agentreview",
+  "pk": 27,
+  "fields": {
+    "user": 9,
+    "agent": 6,
+    "review": "Great agent but could be better in communicating",
+    "reply": null,
+    "rating": 3,
+    "active": false,
+    "date": "2025-10-10T00:45:33.657Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 13,
+  "fields": {
+    "agent": 1,
+    "type": "Apartment Booked",
+    "house": null,
+    "apartment": 1,
+    "seen": true,
+    "nid": "nid_ehm53",
+    "date": "2025-09-01T21:04:54.809Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 14,
+  "fields": {
+    "agent": 1,
+    "type": "Apartment Booked",
+    "house": null,
+    "apartment": 1,
+    "seen": true,
+    "nid": "nid_cmbod",
+    "date": "2025-09-01T21:48:00.329Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 16,
+  "fields": {
+    "agent": 1,
+    "type": "Inquiry Message",
+    "house": null,
+    "apartment": null,
+    "seen": true,
+    "nid": "nid_2mn22",
+    "date": "2025-09-03T22:43:28.386Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 17,
+  "fields": {
+    "agent": 9,
+    "type": "Apartment Booked",
+    "house": null,
+    "apartment": 4,
+    "seen": false,
+    "nid": "nid_kn5oa",
+    "date": "2025-09-12T17:25:35.294Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 18,
+  "fields": {
+    "agent": 1,
+    "type": "Apartment Booked",
+    "house": null,
+    "apartment": 1,
+    "seen": true,
+    "nid": "nid_fehn1",
+    "date": "2025-09-16T17:06:33.221Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 19,
+  "fields": {
+    "agent": 1,
+    "type": "Apartment Booked",
+    "house": null,
+    "apartment": 5,
+    "seen": true,
+    "nid": "nid_ifimb",
+    "date": "2025-09-16T18:13:12.289Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 20,
+  "fields": {
+    "agent": 1,
+    "type": "Apartment Booked",
+    "house": null,
+    "apartment": 5,
+    "seen": true,
+    "nid": "nid_24e2a",
+    "date": "2025-09-17T18:38:30.670Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 21,
+  "fields": {
+    "agent": 1,
+    "type": "Apartment Booked",
+    "house": null,
+    "apartment": 1,
+    "seen": true,
+    "nid": "nid_32g25",
+    "date": "2025-09-17T18:42:02.126Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 22,
+  "fields": {
+    "agent": 1,
+    "type": "House Tour",
+    "house": 12,
+    "apartment": null,
+    "seen": true,
+    "nid": "nid_2gmdg",
+    "date": "2025-09-27T06:26:39.635Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 23,
+  "fields": {
+    "agent": 1,
+    "type": "House Tour",
+    "house": 12,
+    "apartment": null,
+    "seen": true,
+    "nid": "nid_eb4mj",
+    "date": "2025-09-27T14:24:26.395Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 24,
+  "fields": {
+    "agent": 1,
+    "type": "House Tour",
+    "house": 12,
+    "apartment": null,
+    "seen": true,
+    "nid": "nid_334ja",
+    "date": "2025-09-27T14:35:15.372Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 25,
+  "fields": {
+    "agent": 1,
+    "type": "House Tour",
+    "house": 12,
+    "apartment": null,
+    "seen": true,
+    "nid": "nid_h1ek1",
+    "date": "2025-09-27T14:35:25.264Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 26,
+  "fields": {
+    "agent": 1,
+    "type": "House Tour",
+    "house": 12,
+    "apartment": null,
+    "seen": true,
+    "nid": "nid_2o1ca",
+    "date": "2025-09-27T14:35:34.277Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 27,
+  "fields": {
+    "agent": 1,
+    "type": "Inquiry Message",
+    "house": null,
+    "apartment": null,
+    "seen": true,
+    "nid": "nid_kihek",
+    "date": "2025-09-27T14:36:36.937Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 28,
+  "fields": {
+    "agent": 1,
+    "type": "Inquiry Message",
+    "house": null,
+    "apartment": null,
+    "seen": true,
+    "nid": "nid_3321k",
+    "date": "2025-09-27T14:37:10.029Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 29,
+  "fields": {
+    "agent": 1,
+    "type": "Inquiry Message",
+    "house": null,
+    "apartment": null,
+    "seen": true,
+    "nid": "nid_hh5im",
+    "date": "2025-09-27T14:37:17.123Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 30,
+  "fields": {
+    "agent": 1,
+    "type": "Inquiry Message",
+    "house": null,
+    "apartment": null,
+    "seen": true,
+    "nid": "nid_2k55g",
+    "date": "2025-09-27T14:37:26.577Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 31,
+  "fields": {
+    "agent": 1,
+    "type": "House Tour",
+    "house": 8,
+    "apartment": null,
+    "seen": true,
+    "nid": "nid_l4aij",
+    "date": "2025-10-05T13:15:23.077Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 32,
+  "fields": {
+    "agent": 1,
+    "type": "House Tour",
+    "house": 8,
+    "apartment": null,
+    "seen": false,
+    "nid": "nid_2affk",
+    "date": "2025-10-05T13:28:19.766Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 33,
+  "fields": {
+    "agent": 1,
+    "type": "House Tour",
+    "house": 12,
+    "apartment": null,
+    "seen": false,
+    "nid": "nid_ajjnc",
+    "date": "2025-10-05T13:43:19.146Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 34,
+  "fields": {
+    "agent": 1,
+    "type": "House Tour",
+    "house": 12,
+    "apartment": null,
+    "seen": false,
+    "nid": "nid_35l2i",
+    "date": "2025-10-05T13:51:11.146Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 35,
+  "fields": {
+    "agent": 1,
+    "type": "House Tour",
+    "house": 12,
+    "apartment": null,
+    "seen": false,
+    "nid": "nid_4hlef",
+    "date": "2025-10-05T13:51:32.868Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 36,
+  "fields": {
+    "agent": 1,
+    "type": "Inquiry Message",
+    "house": null,
+    "apartment": null,
+    "seen": false,
+    "nid": "nid_h3igd",
+    "date": "2025-10-05T14:17:13.882Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 37,
+  "fields": {
+    "agent": 10,
+    "type": "House Tour",
+    "house": 4,
+    "apartment": null,
+    "seen": false,
+    "nid": "nid_h3ngb",
+    "date": "2025-11-02T20:54:03.605Z"
+  }
+},
+{
+  "model": "agents.notification",
+  "pk": 38,
+  "fields": {
+    "agent": 1,
+    "type": "Apartment Booked",
+    "house": null,
+    "apartment": 1,
+    "seen": false,
+    "nid": "nid_31eda",
+    "date": "2025-11-02T20:57:20.991Z"
+  }
+},
+{
+  "model": "userauths.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$KTRdjA6lZqvM2j3DEFkAkr$0k1dSo0wopHVZsPw2v/8j9jztffcrVMUZOEG+pENq+0=",
+    "last_login": "2026-04-19T18:01:18.813Z",
+    "is_superuser": true,
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-08-23T22:09:11.022Z",
+    "username": "david",
+    "email": "daviddamilare776@gmail.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "userauths.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$skbHIYrpXXu50fHnB90YoJ$dJzhTtQdTmy9PJtIiRPuc4w9TUSjbwxbKmLBPsdFncM=",
+    "last_login": "2025-11-13T18:38:34.743Z",
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-25T23:36:09.603Z",
+    "username": "davidtherodent",
+    "email": "davidtherodent@gmail.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "userauths.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$0ujlvrOW6t83vkEMwcNHT8$+djneydI8SE6uVBhsf7EVarLR7cwU8rnd2ErWqDy7y4=",
+    "last_login": "2026-04-19T18:00:09.063Z",
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-01T19:06:37.100Z",
+    "username": "johnpauladebayo588",
+    "email": "johnpauladebayo588@gmail.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "userauths.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$RuvivwXHp7smGTxISGC2ya$9zfb/geUzbTPYniiMAhpAs0LgiOFghN0QZzy23Y1Sq0=",
+    "last_login": "2025-09-01T21:53:50.209Z",
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-01T21:53:45.863Z",
+    "username": "elijahsidi",
+    "email": "elijahsidi@gmail.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "userauths.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$KMANXgoY5loprBmKq1Aaym$RoqSA5J1ka5JubjZNRWar0p/Z+6ojyPSyzaAst70+o0=",
+    "last_login": "2025-10-09T23:26:52.750Z",
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-06T04:21:56.456Z",
+    "username": "daviddanilare",
+    "email": "daviddanilare@gmail.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "userauths.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$agNjRNgOsDH6FR6AalFfTu$z9Ab6avmsaaMta1HnaPRPXRYXz9887YF1j9BLejuUDM=",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "Emeka",
+    "last_name": "Nwachukwu",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-09T16:46:43.409Z",
+    "username": "emeka.nwachukwu780",
+    "email": "emeka.nwachukwu517@hotmail.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "userauths.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$V1Qd8zdKKblL9ossKojLRY$X0m7/UdFqgrwnC4fbcQ1+IwcPxx6NDlt12oGUI01KMI=",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "Amaka",
+    "last_name": "Eze",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-09T16:46:44.182Z",
+    "username": "amaka.eze252",
+    "email": "amaka.eze779@yahoo.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "userauths.user",
+  "pk": 12,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$aIcf6LUS8Fu5vfrl35xRK7$bPETdW0UwWpEawh//Vxu0PgYfOMNTIoCa7LMQiEysgA=",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "Amaka",
+    "last_name": "Ogunleye",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-09T16:46:45.172Z",
+    "username": "amaka.ogunleye906",
+    "email": "amaka.ogunleye350@gmail.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "userauths.user",
+  "pk": 13,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$Imbs03nvUp2iJDDz20fSIF$+toFB55MR4uhBiVhfCrA1r5GpkDM6hdRBg6bV0BnHgg=",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "Emeka",
+    "last_name": "Obi",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-09T16:46:46.681Z",
+    "username": "emeka.obi413",
+    "email": "emeka.obi991@hotmail.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "userauths.user",
+  "pk": 14,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$EQ3GuVSg6cRx90SdQTnDcZ$CR4kr1I7Px8Yb21fl6il2WnumBUSDmyaB9cLl63eP+o=",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "Ngozi",
+    "last_name": "Okeke",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-09T16:46:47.960Z",
+    "username": "ngozi.okeke272",
+    "email": "ngozi.okeke495@hotmail.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "userauths.user",
+  "pk": 15,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$yYqAalIoG9DShNQZ4bi4hx$39nQZLYIfeL/wahSgJ8VbH3HMvgHXVKUOIMS3KCTNBg=",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "Tunde",
+    "last_name": "Ibrahim",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-09T16:46:49.275Z",
+    "username": "tunde.ibrahim268",
+    "email": "tunde.ibrahim737@yahoo.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "userauths.user",
+  "pk": 16,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$mmcjDvOyN98VO8adKkdAfo$mq5/bWl7oCfygWKaYJZFF7A5+il+mmtTyv8roF8wLsU=",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "Chidi",
+    "last_name": "Obi",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-09T16:46:50.533Z",
+    "username": "chidi.obi272",
+    "email": "chidi.obi891@yahoo.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "userauths.user",
+  "pk": 17,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$plCeQZ3J7gJ9FMDXRUZ7ni$imlEWR+ZUEZwc8K2dZZ4/niyS7/qisFBo4jjG+6tEoo=",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "Ifeanyi",
+    "last_name": "Ogunleye",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-09T16:46:51.784Z",
+    "username": "ifeanyi.ogunleye719",
+    "email": "ifeanyi.ogunleye114@gmail.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "userauths.user",
+  "pk": 18,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$DKloalb0R03AhH9goefxHm$QjEdEvyINwKz7j+mUxofjgA/31oS9/p1C4oWfUtKH4k=",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "Tunde",
+    "last_name": "Adebayo",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-09T16:46:53.084Z",
+    "username": "tunde.adebayo949",
+    "email": "tunde.adebayo678@gmail.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "userauths.profile",
+  "pk": 2,
+  "fields": {
+    "user": 1,
+    "image": "default.jpg",
+    "full_name": "David Damilare",
+    "phone": "07039020348"
+  }
+},
+{
+  "model": "userauths.profile",
+  "pk": 7,
+  "fields": {
+    "user": 7,
+    "image": "",
+    "full_name": "John Paul",
+    "phone": "+2349037931855"
+  }
+},
+{
+  "model": "userauths.profile",
+  "pk": 8,
+  "fields": {
+    "user": 8,
+    "image": "",
+    "full_name": "elijah sidi",
+    "phone": "+2347037201880"
+  }
+},
+{
+  "model": "userauths.profile",
+  "pk": 9,
+  "fields": {
+    "user": 6,
+    "image": "images/agent-2_FKC8hj4.jpg",
+    "full_name": "Tyler Star",
+    "phone": "+2348067423042"
+  }
+},
+{
+  "model": "userauths.profile",
+  "pk": 10,
+  "fields": {
+    "user": 9,
+    "image": "",
+    "full_name": "Moses",
+    "phone": "+2348067423042"
+  }
+},
+{
+  "model": "customer.notification",
+  "pk": 19,
+  "fields": {
+    "customer": 6,
+    "type": "Booking Confirmed",
+    "booking": 22,
+    "seen": false,
+    "nid": "nid_21ca4",
+    "date": "2025-09-17T18:38:30.639Z"
+  }
+},
+{
+  "model": "customer.notification",
+  "pk": 20,
+  "fields": {
+    "customer": 9,
+    "type": "Booking Confirmed",
+    "booking": 23,
+    "seen": false,
+    "nid": "nid_24mlc",
+    "date": "2025-09-17T18:42:02.102Z"
+  }
+},
+{
+  "model": "customer.notification",
+  "pk": 21,
+  "fields": {
+    "customer": 6,
+    "type": "Booking Confirmed",
+    "booking": 24,
+    "seen": false,
+    "nid": "nid_4hbmh",
+    "date": "2025-11-02T20:57:20.940Z"
+  }
+}
+]
