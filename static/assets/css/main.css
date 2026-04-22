@@ -14,60 +14,53 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Montserrat",  sans-serif;
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Montserrat", sans-serif;
 }
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+/* Global Colors - Updated Theme */
 :root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #323b3b; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #163535; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #2c7a7b; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --background-color: #343434;           /* Replaced white with dark */
+  --default-color: #e0e0e0;              /* Light gray for main text */
+  --heading-color: #ffffff;              /* White for headings */
+  --accent-color: #FECD0B;               /* Main brand color - Yellow */
+  --surface-color: #2a2a2a;              /* Dark surface for cards/boxes */
+  --contrast-color: #ffffff;             /* White text on accent */
 }
 
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+/* Nav Menu Colors */
 :root {
-  --nav-color: #323b3b;  /* The default color of the main navmenu links */
-  --nav-hover-color: #2c7a7b; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #323b3b; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #2c7a7b; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #e0e0e0;
+  --nav-hover-color: #FECD0B;
+  --nav-mobile-background-color: #343434;
+  --nav-dropdown-background-color: #2a2a2a;
+  --nav-dropdown-color: #e0e0e0;
+  --nav-dropdown-hover-color: #FECD0B;
 }
 
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
-
+/* Color Presets */
 .light-background {
-  --background-color: #eaf9f9;
-  --surface-color: #ffffff;
+  --background-color: #343434;
+  --surface-color: #2a2a2a;
 }
 
 .dark-background {
-  --background-color: #081b12;
+  --background-color: #1a1a1a;
   --default-color: #ffffff;
   --heading-color: #ffffff;
-  --surface-color: #1f3028;
+  --surface-color: #252525;
   --contrast-color: #ffffff;
 }
 
 .accent-background {
-  --background-color: #077f46;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --accent-color: #ffffff;
-  --surface-color: #2a8f5f;
-  --contrast-color: #ffffff;
+  --background-color: #FECD0B;
+  --default-color: #1f1f1f;
+  --heading-color: #1f1f1f;
+  --accent-color: #1f1f1f;
+  --surface-color: #ffdd4d;
+  --contrast-color: #1f1f1f;
 }
-
-/* Smooth scroll */
-:root {
-  scroll-behavior: smooth;
-}
-
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
@@ -86,7 +79,8 @@ a {
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  /* color: color-mix(in srgb, var(--accent-color), transparent 25%); */
+  color: #ffdd4d;
   text-decoration: none;
 }
 
@@ -117,12 +111,14 @@ h6 {
 
 .inquiry-form .sent-message {
   display: none;
-  color: #ffffff;
-  background: #059652;
+  /* color: #ffffff; */
+  /* background: #059652; */
   text-align: center;
   padding: 15px;
   margin-bottom: 24px;
   font-weight: 600;
+  background: #FECD0B;        /* Green → Yellow */
+  color: #1f1f1f;
 }
 
 .inquiry-form .loading {
